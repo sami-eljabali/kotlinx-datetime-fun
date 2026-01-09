@@ -5,7 +5,7 @@
 <h3 align="center"><strong>Kotlinx DateTime Fun</strong></h3>
 <p align="center">Kotlinx DateTime extension functions.</p>
 <p align="center">
-  <a href="https://github.com/seljabali/kotlinx-datetime-fun/actions?query=branch%3Amain"><img alt="Build Status" src="https://github.com/seljabali/kotlinx-datetime-fun/actions/workflows/main.yml/badge.svg"/></a>
+  <a href="https://github.com/sami-eljabali/kotlinx-datetime-fun/actions?query=branch%3Amain"><img alt="Build Status" src="https://github.com/sami-eljabali/kotlinx-datetime-fun/actions/workflows/main.yml/badge.svg"/></a>
   <a href="https://repo1.maven.org/maven2/org/eljabali/sami/kotlinxdatetimefun/kotlinxdatetimefun/"><img alt="Maven Central" src="https://img.shields.io/maven-central/v/org.eljabali.sami.kotlinxdatetimefun/kotlinxdatetimefun?color=blue"/></a>
   <a href="https://kotlinlang.org"><img alt="Kotlin" src="https://img.shields.io/badge/Kotlin-2.1.21-orange.svg?style=flat&logo=kotlin"/></a>
 </p> <br>
@@ -102,4 +102,4 @@ dependencies {
 ```
 
 ## Find this library useful? 😏
-Star this repository __[as others have](https://github.com/seljabali/kotlinx-datetime-fun/stargazers)__. ⭐️ <br>
+Star this repository __[as others have](https://github.com/sami-eljabali/kotlinx-datetime-fun/stargazers)__. ⭐️ <br>

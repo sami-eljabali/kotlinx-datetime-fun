@@ -57,11 +57,11 @@ publishing {
             pom {
                 name.set(project.name)
                 description.set("kotlinx.datetime Kotlin extension functions library.")
-                url.set("https://github.com/seljabali/kotlinx-datetime-fun")
+                url.set("https://github.com/sami-eljabali/kotlinx-datetime-fun")
                 licenses {
                     license {
                         name.set("MIT License")
-                        url.set("https://github.com/seljabali/kotlinx-datetime-fun/blob/main/LICENSE")
+                        url.set("https://github.com/sami-eljabali/kotlinx-datetime-fun/blob/main/LICENSE")
                     }
                 }
                 developers {
@@ -75,7 +75,7 @@ publishing {
                 scm {
                     connection.set("scm:git:git://github.com/seljabali/kotlinx-datetime-fun.git")
                     developerConnection.set("scm:git:ssh://github.com/seljabali/kotlinx-datetime-fun.git")
-                    url.set("https://github.com/seljabali/kotlinx-datetime-fun/tree/main")
+                    url.set("https://github.com/sami-eljabali/kotlinx-datetime-fun/tree/main")
                 }
             }
             groupId = project.group as String
