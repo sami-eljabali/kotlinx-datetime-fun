@@ -3,7 +3,7 @@ plugins {
 }
 
 group = "org.eljabali.sami.kotlinxdatetimefun"
-version = "0.0.1"
+version = "0.0.2"
 
 allprojects {
     repositories {

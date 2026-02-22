@@ -97,7 +97,7 @@ repositories {
 }
 
 dependencies {
-  implementation("org.eljabali.sami.kotlinxdatetimefun:kotlinxdatetimefun:0.0.1")
+  implementation("org.eljabali.sami.kotlinxdatetimefun:kotlinxdatetimefun:0.0.2")
 }  
 ```
 
