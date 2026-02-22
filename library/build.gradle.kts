@@ -1,6 +1,6 @@
 plugins {
-    kotlin("multiplatform") version "2.3.10"
-    id("org.jetbrains.dokka") version "1.9.20"
+    alias(libs.plugins.kotlin.multiplatform)
+    alias(libs.plugins.dokka)
     `maven-publish`
     signing
 }
@@ -14,14 +14,14 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-            api("org.jetbrains.kotlinx:kotlinx-datetime:0.6.2")
+            api(libs.kotlinx.datetime)
         }
         commonTest.dependencies {
-            implementation(kotlin("test"))
+            implementation(libs.kotlin.test)
         }
         jvmTest.dependencies {
-            implementation("org.junit.jupiter:junit-jupiter-api:5.8.1")
-            runtimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.1")
+            implementation(libs.junit.jupiter.api)
+            runtimeOnly(libs.junit.jupiter.engine)
         }
     }
 }
