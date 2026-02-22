@@ -103,3 +103,6 @@ dependencies {
 
 ## Find this library useful? 😏
 Star this repository __[as others have](https://github.com/sami-eljabali/kotlinx-datetime-fun/stargazers)__. ⭐️ <br>
+
+## 🍪 Extras
+[DateTimeFormats](https://gist.github.com/sami-eljabali/d9476427db7f39645d8f94f8a0707751) to help with day to day printing/parsing of datetimes!
