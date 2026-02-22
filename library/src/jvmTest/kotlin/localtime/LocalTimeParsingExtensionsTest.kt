@@ -2,7 +2,9 @@ package localtime
 
 import kotlinx.datetime.LocalTime
 import kotlinxdatetimefun.localtime.extensions.print
+import kotlinxdatetimefun.localtime.extensions.toLocalTime
 import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertNull
 import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
@@ -63,5 +65,22 @@ class LocalTimeParsingExtensionsTest {
         val result = earlyTime.print("H:m")
         assertEquals("5:7", result)
     }
-}
 
+    @Test
+    fun `toLocalTime parses ISO time when no format is provided`() {
+        val result = "14:05:09".toLocalTime()
+        assertEquals(LocalTime(14, 5, 9), result)
+    }
+
+    @Test
+    fun `toLocalTime tries formats in order until one succeeds`() {
+        val result = "14.05".toLocalTime("HH:mm", "HH.mm")
+        assertEquals(LocalTime(14, 5, 0), result)
+    }
+
+    @Test
+    fun `toLocalTime returns null when all formats fail`() {
+        val result = "not-a-time".toLocalTime("HH:mm", "HH.mm")
+        assertNull(result)
+    }
+}

@@ -43,6 +43,15 @@ class LocalDateTimeParsingExtensionsTest {
     }
 
     @Test
+    fun `test tries provided date time formats in order`() {
+        val input = "13-04-2024 12:34:56"
+        val result = input.toLocalDateTime("yyyy/MM/dd HH:mm:ss", "dd-MM-yyyy HH:mm:ss")
+
+        assertNotNull(result)
+        assertEquals(LocalDateTime(2024, 4, 13, 12, 34, 56), result)
+    }
+
+    @Test
     fun `test valid ISO date time with incorrect format returns null`() {
         val input = "2024-04-13T12:34:56"
         val format = "dd-MM-yyyy HH:mm:ss" // doesn't match the input
