@@ -4,6 +4,7 @@ import kotlinx.datetime.DayOfWeek
 import kotlinx.datetime.LocalDateTime
 import kotlinx.datetime.LocalTime
 import kotlinx.datetime.TimeZone
+import kotlinx.datetime.number
 import kotlinxdatetimefun.localdatetime.extensions.atEndOfDay
 import kotlinxdatetimefun.localdatetime.extensions.atStartOfDay
 import kotlinxdatetimefun.localdatetime.extensions.getLast
@@ -29,15 +30,15 @@ import org.junit.jupiter.api.Test
 class LocalDateTimeMutatingExtensionsTest {
 
     // Test data
-    private val testDateTime = LocalDateTime(
-        year = 2023,
-        monthNumber = 6,
-        dayOfMonth = 15,
-        hour = 12,
-        minute = 30,
-        second = 45,
-        nanosecond = 123_456_789
-    )
+    private val testDateTime =
+        LocalDateTime(year = 2023,
+            month = 6,
+            day = 15,
+            hour = 12,
+            minute = 30,
+            second = 45,
+            nanosecond = 123_456_789
+        )
     private val testTime = LocalTime(
         hour = 8,
         minute = 15,
@@ -50,8 +51,8 @@ class LocalDateTimeMutatingExtensionsTest {
     fun `toLocalDate should extract correct date components`() {
         val result = testDateTime.toLocalDate()
         assertEquals(2023, result.year)
-        assertEquals(6, result.monthNumber)
-        assertEquals(15, result.dayOfMonth)
+        assertEquals(6, result.month.number)
+        assertEquals(15, result.day)
     }
 
     @Test
@@ -71,8 +72,8 @@ class LocalDateTimeMutatingExtensionsTest {
         assertEquals(0, result.second)
         assertEquals(0, result.nanosecond)
         assertEquals(testDateTime.year, result.year)
-        assertEquals(testDateTime.monthNumber, result.monthNumber)
-        assertEquals(testDateTime.dayOfMonth, result.dayOfMonth)
+        assertEquals(testDateTime.month.number, result.month.number)
+        assertEquals(testDateTime.day, result.day)
     }
 
     @Test
@@ -83,16 +84,16 @@ class LocalDateTimeMutatingExtensionsTest {
         assertEquals(59, result.second)
         assertEquals(999_999_999, result.nanosecond)
         assertEquals(testDateTime.year, result.year)
-        assertEquals(testDateTime.monthNumber, result.monthNumber)
-        assertEquals(testDateTime.dayOfMonth, result.dayOfMonth)
+        assertEquals(testDateTime.month.number, result.month.number)
+        assertEquals(testDateTime.day, result.day)
     }
 
     @Test
     fun `withLocalTime should combine date with new time`() {
         val result = testDateTime.withLocalTime(testTime)
         assertEquals(testDateTime.year, result.year)
-        assertEquals(testDateTime.monthNumber, result.monthNumber)
-        assertEquals(testDateTime.dayOfMonth, result.dayOfMonth)
+        assertEquals(testDateTime.month.number, result.month.number)
+        assertEquals(testDateTime.day, result.day)
         assertEquals(testTime.hour, result.hour)
         assertEquals(testTime.minute, result.minute)
         assertEquals(testTime.second, result.second)
@@ -103,56 +104,56 @@ class LocalDateTimeMutatingExtensionsTest {
     fun `plusYears should correctly add years`() {
         val result = testDateTime.plusYears(2, testTimeZone)
         assertEquals(2025, result.year)
-        assertEquals(testDateTime.monthNumber, result.monthNumber)
-        assertEquals(testDateTime.dayOfMonth, result.dayOfMonth)
+        assertEquals(testDateTime.month.number, result.month.number)
+        assertEquals(testDateTime.day, result.day)
     }
 
     @Test
     fun `minusYears should correctly subtract years`() {
         val result = testDateTime.minusYears(3, testTimeZone)
         assertEquals(2020, result.year)
-        assertEquals(testDateTime.monthNumber, result.monthNumber)
-        assertEquals(testDateTime.dayOfMonth, result.dayOfMonth)
+        assertEquals(testDateTime.month.number, result.month.number)
+        assertEquals(testDateTime.day, result.day)
     }
 
     @Test
     fun `plusMonths should correctly add months`() {
         val result = testDateTime.plusMonths(4, testTimeZone)
         assertEquals(2023, result.year)
-        assertEquals(10, result.monthNumber)
-        assertEquals(15, result.dayOfMonth)
+        assertEquals(10, result.month.number)
+        assertEquals(15, result.day)
     }
 
     @Test
     fun `minusMonths should correctly subtract months`() {
         val result = testDateTime.minusMonths(5, testTimeZone)
         assertEquals(2023, result.year)
-        assertEquals(1, result.monthNumber)
-        assertEquals(15, result.dayOfMonth)
+        assertEquals(1, result.month.number)
+        assertEquals(15, result.day)
     }
 
     @Test
     fun `plusDays should correctly add days`() {
         val result = testDateTime.plusDays(10, testTimeZone)
         assertEquals(2023, result.year)
-        assertEquals(6, result.monthNumber)
-        assertEquals(25, result.dayOfMonth)
+        assertEquals(6, result.month.number)
+        assertEquals(25, result.day)
     }
 
     @Test
     fun `minusDays should correctly subtract days`() {
         val result = testDateTime.minusDays(15, testTimeZone)
         assertEquals(2023, result.year)
-        assertEquals(5, result.monthNumber)
-        assertEquals(31, result.dayOfMonth)
+        assertEquals(5, result.month.number)
+        assertEquals(31, result.day)
     }
 
     @Test
     fun `plusHours should correctly add hours`() {
         val result = testDateTime.plusHours(6, testTimeZone)
         assertEquals(2023, result.year)
-        assertEquals(6, result.monthNumber)
-        assertEquals(15, result.dayOfMonth)
+        assertEquals(6, result.month.number)
+        assertEquals(15, result.day)
         assertEquals(18, result.hour)
     }
 
@@ -160,8 +161,8 @@ class LocalDateTimeMutatingExtensionsTest {
     fun `minusHours should correctly subtract hours`() {
         val result = testDateTime.minusHours(13, testTimeZone)
         assertEquals(2023, result.year)
-        assertEquals(6, result.monthNumber)
-        assertEquals(14, result.dayOfMonth)
+        assertEquals(6, result.month.number)
+        assertEquals(14, result.day)
         assertEquals(23, result.hour)
     }
 
@@ -200,8 +201,8 @@ class LocalDateTimeMutatingExtensionsTest {
         // June 15, 2023 is a Thursday
         val previousMonday = testDateTime.getLast(DayOfWeek.MONDAY, false, testTimeZone)
         assertEquals(2023, previousMonday.year)
-        assertEquals(6, previousMonday.monthNumber)
-        assertEquals(12, previousMonday.dayOfMonth)
+        assertEquals(6, previousMonday.month.number)
+        assertEquals(12, previousMonday.day)
         assertEquals(DayOfWeek.MONDAY, previousMonday.dayOfWeek)
     }
 
@@ -209,8 +210,8 @@ class LocalDateTimeMutatingExtensionsTest {
     fun `getLast should return same day when countingInThisDay is true`() {
         val sameDay = testDateTime.getLast(DayOfWeek.THURSDAY, true, testTimeZone)
         assertEquals(testDateTime.year, sameDay.year)
-        assertEquals(testDateTime.monthNumber, sameDay.monthNumber)
-        assertEquals(testDateTime.dayOfMonth, sameDay.dayOfMonth)
+        assertEquals(testDateTime.month.number, sameDay.month.number)
+        assertEquals(testDateTime.day, sameDay.day)
     }
 
     @Test
@@ -218,8 +219,8 @@ class LocalDateTimeMutatingExtensionsTest {
         // June 15, 2023 is a Thursday
         val nextFriday = testDateTime.getNext(DayOfWeek.FRIDAY, false, testTimeZone)
         assertEquals(2023, nextFriday.year)
-        assertEquals(6, nextFriday.monthNumber)
-        assertEquals(16, nextFriday.dayOfMonth)
+        assertEquals(6, nextFriday.month.number)
+        assertEquals(16, nextFriday.day)
         assertEquals(DayOfWeek.FRIDAY, nextFriday.dayOfWeek)
     }
 
@@ -227,8 +228,8 @@ class LocalDateTimeMutatingExtensionsTest {
     fun `getNext should return same day when countingInThisDay is true`() {
         val sameDay = testDateTime.getNext(DayOfWeek.THURSDAY, true, testTimeZone)
         assertEquals(testDateTime.year, sameDay.year)
-        assertEquals(testDateTime.monthNumber, sameDay.monthNumber)
-        assertEquals(testDateTime.dayOfMonth, sameDay.dayOfMonth)
+        assertEquals(testDateTime.month.number, sameDay.month.number)
+        assertEquals(testDateTime.day, sameDay.day)
     }
 
     @Test
@@ -236,8 +237,8 @@ class LocalDateTimeMutatingExtensionsTest {
         val leapDate = LocalDateTime(2020, 2, 29, 12, 0)
         val result = leapDate.plusYears(1, testTimeZone)
         assertEquals(2021, result.year)
-        assertEquals(2, result.monthNumber)
-        assertEquals(28, result.dayOfMonth)
+        assertEquals(2, result.month.number)
+        assertEquals(28, result.day)
     }
 
     @Test
@@ -245,7 +246,7 @@ class LocalDateTimeMutatingExtensionsTest {
         val monthEnd = LocalDateTime(2023, 1, 31, 12, 0)
         val result = monthEnd.plusMonths(1, testTimeZone)
         assertEquals(2023, result.year)
-        assertEquals(2, result.monthNumber)
-        assertEquals(28, result.dayOfMonth)
+        assertEquals(2, result.month.number)
+        assertEquals(28, result.day)
     }
 }

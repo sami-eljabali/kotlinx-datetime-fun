@@ -22,10 +22,10 @@ jobs:
           distribution: 'adopt'
 
       - name: Build documentation
-        run: ./gradlew dokkaHtml
+        run: ./gradlew :library:dokkaHtml
 
       - name: Publish documentation
         uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
           BRANCH: gh-pages
-          FOLDER: build/dokka/html
+          FOLDER: library/build/dokka/html
