@@ -10,11 +10,17 @@ private const val flexibleIso8601Format = "yyyy-MM-dd'T'HH:mm:ss[.SSSSSS][.SSSSS
  * Works off of String representations of datetime and tries parsing as LocalDateTime & return null if it fails.
  *
  * @param this String representation of LocalDateTime.
- * @param format String representing format that should solely be used when parsing the date.
+ * @param formats Parsing formats attempted in order. Null/blank entries attempt default ISO parsing.
  * @return LocalDateTime? Null means couldn't parse, else parsed LocalDateTime.
  */
-fun String.toLocalDateTime(format: String? = null): LocalDateTime? =
-    parseLocalDateTimeHelper(this, format) ?: parseLocalDateTimeHelper(this, flexibleIso8601Format)
+fun String.toLocalDateTime(vararg formats: String?): LocalDateTime? {
+    val parsingAttempts = if (formats.isEmpty()) listOf<String?>(null) else formats.asList()
+    for (format in parsingAttempts) {
+        val parsedDateTime = parseLocalDateTimeHelper(this, format)
+        if (parsedDateTime != null) return parsedDateTime
+    }
+    return parseLocalDateTimeHelper(this, flexibleIso8601Format)
+}
 
 private fun parseLocalDateTimeHelper(dateText: String, format: String?): LocalDateTime? =
     if (format.isNullOrEmpty())

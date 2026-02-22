@@ -59,4 +59,13 @@ class LocalDateParsingExtensionsTest {
         // Then the result should be the expected LocalDate using ISO parsing
         assertEquals(LocalDate(2021, 9, 15), result)
     }
+
+    @Test
+    fun `toLocalDate should try formats in order until one succeeds`() {
+        val dateStr = "15/09/2021"
+
+        val result = dateStr.toLocalDate("MM-dd-yyyy", "dd/MM/yyyy")
+
+        assertEquals(LocalDate(2021, 9, 15), result)
+    }
 }
