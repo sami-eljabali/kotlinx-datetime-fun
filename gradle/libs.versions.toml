@@ -2,7 +2,7 @@
 kotlin = "2.3.10"
 dokka = "1.9.20"
 nexusPublish = "2.0.0"
-kotlinxDatetime = "0.6.2"
+kotlinxDatetime = "0.7.1"
 junit = "5.8.1"
 
 [libraries]
