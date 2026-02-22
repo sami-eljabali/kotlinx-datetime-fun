@@ -28,4 +28,4 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Unit tests
-        run: bash ./gradlew test --stacktrace
+        run: bash ./gradlew :library:allTests --stacktrace
