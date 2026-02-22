@@ -43,8 +43,15 @@ tasks {
 
 publishing {
     publications.withType<MavenPublication>().configureEach {
-        artifactId = rootProject.name
-        artifact(tasks["dokkaJar"])
+        when (name) {
+            "kotlinMultiplatform" -> {
+                artifactId = rootProject.name
+            }
+            "jvm" -> {
+                artifactId = "${rootProject.name}-jvm"
+                artifact(tasks["dokkaJar"])
+            }
+        }
         pom {
             name.set(rootProject.name)
             description.set("kotlinx.datetime Kotlin extension functions library.")
