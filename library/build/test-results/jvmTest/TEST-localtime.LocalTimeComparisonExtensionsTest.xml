@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="LocalTimeComparisonExtensionsTest[jvm]" tests="10" skipped="0" failures="0" errors="0" timestamp="2026-02-22T17:05:48.246Z" hostname="MacBookPro.local" time="0.005">
+  <properties/>
+  <testcase name="test periodUntil returns correct hours, minutes, seconds, nanoseconds()[jvm]" classname="localtime.LocalTimeComparisonExtensionsTest" time="0.001"/>
+  <testcase name="test getNanoSecondDifference returns correct total nanoseconds()[jvm]" classname="localtime.LocalTimeComparisonExtensionsTest" time="0.001"/>
+  <testcase name="given 2 times and no time apart, then should see such differences in comparing()[jvm]" classname="localtime.LocalTimeComparisonExtensionsTest" time="0.0"/>
+  <testcase name="given 2 times 1hr and 10m apart, then should see such differences in comparing()[jvm]" classname="localtime.LocalTimeComparisonExtensionsTest" time="0.001"/>
+  <testcase name="test getMinuteDifference returns correct minutes()[jvm]" classname="localtime.LocalTimeComparisonExtensionsTest" time="0.0"/>
+  <testcase name="test getMilliSecondDifference returns correct total milliseconds()[jvm]" classname="localtime.LocalTimeComparisonExtensionsTest" time="0.001"/>
+  <testcase name="test getHourDifference returns correct hours()[jvm]" classname="localtime.LocalTimeComparisonExtensionsTest" time="0.0"/>
+  <testcase name="test identical times return zero for all differences()[jvm]" classname="localtime.LocalTimeComparisonExtensionsTest" time="0.0"/>
+  <testcase name="test reversed time returns negative differences()[jvm]" classname="localtime.LocalTimeComparisonExtensionsTest" time="0.001"/>
+  <testcase name="test getSecondDifference returns correct seconds()[jvm]" classname="localtime.LocalTimeComparisonExtensionsTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

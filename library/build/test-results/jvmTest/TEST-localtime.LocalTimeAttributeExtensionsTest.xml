@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="LocalTimeAttributeExtensionsTest[jvm]" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-02-22T17:05:48.243Z" hostname="MacBookPro.local" time="0.002">
+  <properties/>
+  <testcase name="test isAtStartOfDay returns false for other times()[jvm]" classname="localtime.LocalTimeAttributeExtensionsTest" time="0.001"/>
+  <testcase name="test isInAm returns true for early morning()[jvm]" classname="localtime.LocalTimeAttributeExtensionsTest" time="0.0"/>
+  <testcase name="test isInAm returns false for noon or later()[jvm]" classname="localtime.LocalTimeAttributeExtensionsTest" time="0.0"/>
+  <testcase name="test isInPm returns false for before noon()[jvm]" classname="localtime.LocalTimeAttributeExtensionsTest" time="0.0"/>
+  <testcase name="test isAtStartOfDay returns true for MIN()[jvm]" classname="localtime.LocalTimeAttributeExtensionsTest" time="0.0"/>
+  <testcase name="test isAtEndOfDay returns false for other times()[jvm]" classname="localtime.LocalTimeAttributeExtensionsTest" time="0.0"/>
+  <testcase name="test isInPm returns true for noon or later()[jvm]" classname="localtime.LocalTimeAttributeExtensionsTest" time="0.0"/>
+  <testcase name="test isAtEndOfDay returns true for MAX()[jvm]" classname="localtime.LocalTimeAttributeExtensionsTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

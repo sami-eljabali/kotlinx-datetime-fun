@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="LocalDateTimeParsingExtensionsTest[jvm]" tests="13" skipped="0" failures="0" errors="0" timestamp="2026-02-22T17:05:48.211Z" hostname="MacBookPro.local" time="0.027">
+  <properties/>
+  <testcase name="given date in ISO_8601_S, when parsed without format &amp; converted to date, then should match when printed back to text()[jvm]" classname="localdatetime.LocalDateTimeParsingExtensionsTest" time="0.011"/>
+  <testcase name="given date in ISO_8601_SS, when parsed without format &amp; converted to date, then should match when printed back to text()[jvm]" classname="localdatetime.LocalDateTimeParsingExtensionsTest" time="0.002"/>
+  <testcase name="test invalid date without format returns null()[jvm]" classname="localdatetime.LocalDateTimeParsingExtensionsTest" time="0.004"/>
+  <testcase name="given date in ISO_8601_4S, when parsed without format &amp; converted to date, then should match when printed back to text()[jvm]" classname="localdatetime.LocalDateTimeParsingExtensionsTest" time="0.002"/>
+  <testcase name="given date in ISO_8601_5S, when parsed without format &amp; converted to date, then should be null()[jvm]" classname="localdatetime.LocalDateTimeParsingExtensionsTest" time="0.001"/>
+  <testcase name="given date in ISO_8601, when parsed without format &amp; converted to date, then should match when printed back to text()[jvm]" classname="localdatetime.LocalDateTimeParsingExtensionsTest" time="0.001"/>
+  <testcase name="given date in ISO_8601_6S, when parsed without format &amp; converted to date, then should match when printed back to text()[jvm]" classname="localdatetime.LocalDateTimeParsingExtensionsTest" time="0.001"/>
+  <testcase name="test null format behaves as no format()[jvm]" classname="localdatetime.LocalDateTimeParsingExtensionsTest" time="0.0"/>
+  <testcase name="test valid formatted date time with format()[jvm]" classname="localdatetime.LocalDateTimeParsingExtensionsTest" time="0.0"/>
+  <testcase name="test valid ISO date time with incorrect format returns null()[jvm]" classname="localdatetime.LocalDateTimeParsingExtensionsTest" time="0.0"/>
+  <testcase name="test valid ISO date time without format()[jvm]" classname="localdatetime.LocalDateTimeParsingExtensionsTest" time="0.001"/>
+  <testcase name="test empty string returns null()[jvm]" classname="localdatetime.LocalDateTimeParsingExtensionsTest" time="0.0"/>
+  <testcase name="given date in ISO_8601_SSS, when parsed without format &amp; converted to date, then should match when printed back to text()[jvm]" classname="localdatetime.LocalDateTimeParsingExtensionsTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="LocalDateAttributeExtensionsTest[jvm]" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-02-22T17:05:48.147Z" hostname="MacBookPro.local" time="0.003">
+  <properties/>
+  <testcase name="getMonthBaseZero returns zero-based month index()[jvm]" classname="localdate.LocalDateAttributeExtensionsTest" time="0.001"/>
+  <testcase name="getDaysInMonth returns correct number of days in month()[jvm]" classname="localdate.LocalDateAttributeExtensionsTest" time="0.0"/>
+  <testcase name="isInLeapYear returns true for leap year and false for non-leap year()[jvm]" classname="localdate.LocalDateAttributeExtensionsTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

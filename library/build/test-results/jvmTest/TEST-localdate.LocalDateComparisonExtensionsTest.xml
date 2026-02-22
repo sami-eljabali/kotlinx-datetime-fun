@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="LocalDateComparisonExtensionsTest[jvm]" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-02-22T17:05:48.151Z" hostname="MacBookPro.local" time="0.002">
+  <properties/>
+  <testcase name="given 2 dateTimes 3 years apart, then should see such differences in comparing()[jvm]" classname="localdate.LocalDateComparisonExtensionsTest" time="0.001"/>
+  <testcase name="given 2 dates 0 days apart, then should see such differences in comparing()[jvm]" classname="localdate.LocalDateComparisonExtensionsTest" time="0.001"/>
+  <testcase name="given dateA after dateB with differing months and days, then should see correct differences and comparisons()[jvm]" classname="localdate.LocalDateComparisonExtensionsTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

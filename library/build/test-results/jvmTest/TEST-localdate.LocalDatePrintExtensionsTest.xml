@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="LocalDatePrintExtensionsTest[jvm]" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-02-22T17:05:48.191Z" hostname="MacBookPro.local" time="0.002">
+  <properties/>
+  <testcase name="print formats date with custom literal text in pattern()[jvm]" classname="localdate.LocalDatePrintExtensionsTest" time="0.001"/>
+  <testcase name="print formats date using yyyy dash MM dash dd pattern()[jvm]" classname="localdate.LocalDatePrintExtensionsTest" time="0.0"/>
+  <testcase name="print formats date using dd slash MM slash yyyy pattern()[jvm]" classname="localdate.LocalDatePrintExtensionsTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="LocalDateTimeMutatingExtensionsTest[jvm]" tests="23" skipped="0" failures="0" errors="0" timestamp="2026-02-22T17:05:48.201Z" hostname="MacBookPro.local" time="0.009">
+  <properties/>
+  <testcase name="plusMinutes should correctly add minutes()[jvm]" classname="localdatetime.LocalDateTimeMutatingExtensionsTest" time="0.001"/>
+  <testcase name="minusSeconds should correctly subtract seconds()[jvm]" classname="localdatetime.LocalDateTimeMutatingExtensionsTest" time="0.001"/>
+  <testcase name="minusYears should correctly subtract years()[jvm]" classname="localdatetime.LocalDateTimeMutatingExtensionsTest" time="0.0"/>
+  <testcase name="getNext should return same day when countingInThisDay is true()[jvm]" classname="localdatetime.LocalDateTimeMutatingExtensionsTest" time="0.0"/>
+  <testcase name="should handle month boundary in date calculations()[jvm]" classname="localdatetime.LocalDateTimeMutatingExtensionsTest" time="0.0"/>
+  <testcase name="should handle leap year correctly in date calculations()[jvm]" classname="localdatetime.LocalDateTimeMutatingExtensionsTest" time="0.0"/>
+  <testcase name="minusMonths should correctly subtract months()[jvm]" classname="localdatetime.LocalDateTimeMutatingExtensionsTest" time="0.0"/>
+  <testcase name="plusDays should correctly add days()[jvm]" classname="localdatetime.LocalDateTimeMutatingExtensionsTest" time="0.001"/>
+  <testcase name="minusHours should correctly subtract hours()[jvm]" classname="localdatetime.LocalDateTimeMutatingExtensionsTest" time="0.0"/>
+  <testcase name="getLast should return same day when countingInThisDay is true()[jvm]" classname="localdatetime.LocalDateTimeMutatingExtensionsTest" time="0.0"/>
+  <testcase name="getLast should find previous day of week()[jvm]" classname="localdatetime.LocalDateTimeMutatingExtensionsTest" time="0.001"/>
+  <testcase name="plusSeconds should correctly add seconds()[jvm]" classname="localdatetime.LocalDateTimeMutatingExtensionsTest" time="0.0"/>
+  <testcase name="plusMonths should correctly add months()[jvm]" classname="localdatetime.LocalDateTimeMutatingExtensionsTest" time="0.0"/>
+  <testcase name="toLocalTime should extract correct time components()[jvm]" classname="localdatetime.LocalDateTimeMutatingExtensionsTest" time="0.001"/>
+  <testcase name="getNext should find next day of week()[jvm]" classname="localdatetime.LocalDateTimeMutatingExtensionsTest" time="0.0"/>
+  <testcase name="atEndOfDay should set time to last moment of day()[jvm]" classname="localdatetime.LocalDateTimeMutatingExtensionsTest" time="0.0"/>
+  <testcase name="atStartOfDay should set time to midnight()[jvm]" classname="localdatetime.LocalDateTimeMutatingExtensionsTest" time="0.0"/>
+  <testcase name="withLocalTime should combine date with new time()[jvm]" classname="localdatetime.LocalDateTimeMutatingExtensionsTest" time="0.0"/>
+  <testcase name="minusMinutes should correctly subtract minutes()[jvm]" classname="localdatetime.LocalDateTimeMutatingExtensionsTest" time="0.0"/>
+  <testcase name="minusDays should correctly subtract days()[jvm]" classname="localdatetime.LocalDateTimeMutatingExtensionsTest" time="0.0"/>
+  <testcase name="toLocalDate should extract correct date components()[jvm]" classname="localdatetime.LocalDateTimeMutatingExtensionsTest" time="0.0"/>
+  <testcase name="plusHours should correctly add hours()[jvm]" classname="localdatetime.LocalDateTimeMutatingExtensionsTest" time="0.0"/>
+  <testcase name="plusYears should correctly add years()[jvm]" classname="localdatetime.LocalDateTimeMutatingExtensionsTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
