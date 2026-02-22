@@ -40,7 +40,7 @@ $dokka.location:kotlinxdatetimefun.localdate.extensions//plusDays/[Error type: U
 $dokka.location:kotlinxdatetimefun.localdate.extensions//plusMonths/[Error type: Unresolved type for LocalDate]#kotlin.Int/PointingToDeclaration/library/kotlinxdatetimefun.localdate.extensions/plus-months.html
 $dokka.location:kotlinxdatetimefun.localdate.extensions//plusYears/[Error type: Unresolved type for LocalDate]#kotlin.Int/PointingToDeclaration/library/kotlinxdatetimefun.localdate.extensions/plus-years.html
 $dokka.location:kotlinxdatetimefun.localdate.extensions//print/[Error type: Unresolved type for LocalDate]#kotlin.String/PointingToDeclaration/library/kotlinxdatetimefun.localdate.extensions/print.html
-$dokka.location:kotlinxdatetimefun.localdate.extensions//toLocalDate/kotlin.String#kotlin.String?/PointingToDeclaration/library/kotlinxdatetimefun.localdate.extensions/to-local-date.html
+$dokka.location:kotlinxdatetimefun.localdate.extensions//toLocalDate/kotlin.String#kotlin.Array[kotlin.String?]/PointingToDeclaration/library/kotlinxdatetimefun.localdate.extensions/to-local-date.html
 $dokka.location:kotlinxdatetimefun.localdate////PointingToDeclaration/library/kotlinxdatetimefun.localdate/index.html
 $dokka.location:kotlinxdatetimefun.localdate//endOfYear/[Error type: Unresolved type for LocalDate.Companion]#[Error type: Unresolved type for TimeZone]/PointingToDeclaration/library/kotlinxdatetimefun.localdate/end-of-year.html
 $dokka.location:kotlinxdatetimefun.localdate//lastFriday/[Error type: Unresolved type for LocalDate.Companion]#[Error type: Unresolved type for TimeZone]/PointingToDeclaration/library/kotlinxdatetimefun.localdate/last-friday.html
@@ -118,7 +118,7 @@ $dokka.location:kotlinxdatetimefun.localdatetime.extensions//plusSeconds/[Error 
 $dokka.location:kotlinxdatetimefun.localdatetime.extensions//plusYears/[Error type: Unresolved type for LocalDateTime]#kotlin.Int#[Error type: Unresolved type for TimeZone]/PointingToDeclaration/library/kotlinxdatetimefun.localdatetime.extensions/plus-years.html
 $dokka.location:kotlinxdatetimefun.localdatetime.extensions//print/[Error type: Unresolved type for LocalDateTime]#kotlin.String/PointingToDeclaration/library/kotlinxdatetimefun.localdatetime.extensions/print.html
 $dokka.location:kotlinxdatetimefun.localdatetime.extensions//toLocalDate/[Error type: Unresolved type for LocalDateTime]#/PointingToDeclaration/library/kotlinxdatetimefun.localdatetime.extensions/to-local-date.html
-$dokka.location:kotlinxdatetimefun.localdatetime.extensions//toLocalDateTime/kotlin.String#kotlin.String?/PointingToDeclaration/library/kotlinxdatetimefun.localdatetime.extensions/to-local-date-time.html
+$dokka.location:kotlinxdatetimefun.localdatetime.extensions//toLocalDateTime/kotlin.String#kotlin.Array[kotlin.String?]/PointingToDeclaration/library/kotlinxdatetimefun.localdatetime.extensions/to-local-date-time.html
 $dokka.location:kotlinxdatetimefun.localdatetime.extensions//toLocalTime/[Error type: Unresolved type for LocalDateTime]#/PointingToDeclaration/library/kotlinxdatetimefun.localdatetime.extensions/to-local-time.html
 $dokka.location:kotlinxdatetimefun.localdatetime.extensions//withLocalTime/[Error type: Unresolved type for LocalDateTime]#[Error type: Unresolved type for LocalTime]/PointingToDeclaration/library/kotlinxdatetimefun.localdatetime.extensions/with-local-time.html
 $dokka.location:kotlinxdatetimefun.localdatetime////PointingToDeclaration/library/kotlinxdatetimefun.localdatetime/index.html
@@ -155,7 +155,7 @@ $dokka.location:kotlinxdatetimefun.localtime.extensions//isInAm/[Error type: Unr
 $dokka.location:kotlinxdatetimefun.localtime.extensions//isInPm/[Error type: Unresolved type for LocalTime]#/PointingToDeclaration/library/kotlinxdatetimefun.localtime.extensions/is-in-pm.html
 $dokka.location:kotlinxdatetimefun.localtime.extensions//periodUntil/[Error type: Unresolved type for LocalTime]#[Error type: Unresolved type for LocalTime]/PointingToDeclaration/library/kotlinxdatetimefun.localtime.extensions/period-until.html
 $dokka.location:kotlinxdatetimefun.localtime.extensions//print/[Error type: Unresolved type for LocalTime]#kotlin.String/PointingToDeclaration/library/kotlinxdatetimefun.localtime.extensions/print.html
-$dokka.location:kotlinxdatetimefun.localtime.extensions//toLocalTime/kotlin.String#kotlin.String?/PointingToDeclaration/library/kotlinxdatetimefun.localtime.extensions/to-local-time.html
+$dokka.location:kotlinxdatetimefun.localtime.extensions//toLocalTime/kotlin.String#kotlin.Array[kotlin.String?]/PointingToDeclaration/library/kotlinxdatetimefun.localtime.extensions/to-local-time.html
 $dokka.location:kotlinxdatetimefun.localtime////PointingToDeclaration/library/kotlinxdatetimefun.localtime/index.html
 $dokka.location:kotlinxdatetimefun.localtime//MAX/[Error type: Unresolved type for LocalTime.Companion]#/PointingToDeclaration/library/kotlinxdatetimefun.localtime/-m-a-x.html
 $dokka.location:kotlinxdatetimefun.localtime//MIN/[Error type: Unresolved type for LocalTime.Companion]#/PointingToDeclaration/library/kotlinxdatetimefun.localtime/-m-i-n.html
