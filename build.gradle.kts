@@ -6,6 +6,8 @@ group = "org.eljabali.sami.kotlinxdatetimefun"
 version = "0.0.2"
 
 allprojects {
+    group = rootProject.group
+    version = rootProject.version
     repositories {
         mavenCentral()
     }
