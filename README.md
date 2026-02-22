@@ -101,7 +101,7 @@ dependencies {
 }  
 ```
 
-## Find this library useful? 😏
+## 😏 Find this library useful?
 Star this repository __[as others have](https://github.com/sami-eljabali/kotlinx-datetime-fun/stargazers)__. ⭐️ <br>
 
 ## 🍪 Extras
