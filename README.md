@@ -29,16 +29,13 @@
 
 ## Features
 ### Parsing
-_Convert strings into Kotlinx DateTime objects with ease_
+_Convert strings into [Kotlinx DateTime](https://github.com/Kotlin/kotlinx-datetime) objects with ease_
 ```kotlin
-// Provided time
 val result = "01:30 AM".toLocalTime()
-
-// Provided local date
 val result = "2021-06-07".toLocalDate()
-
-// Provided ambiguous date formats
-val result = "06/07/2021".toLocalDateTime(format = "MM/dd/yyyy")
+val result = "06/07/2021".toLocalDate("MM/dd/yyyy")
+val result = "06/07/2021".toLocalDate("yyyy-MM-dd", "MM/dd/yyyy") // fall back parsing formats
+val result = "2024-11-15T12:34:56.123456Z".toLocalDateTime() // handles fractional seconds that Kotlinx DateTime doesn't
 ```
 
 ### Comparisons
@@ -68,7 +65,7 @@ val result = dateA.isAfterEqualTime(dateB)
 _Print dates and times using a custom format_
 ```kotlin
 val date = "2021-07-06".toLocalDate()
-val result = date.print(format = "MM/dd/yyyy")
+val result = date.print("MM/dd/yyyy")
 ```
 
 ### Attributes & Mutations
