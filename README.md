@@ -2,7 +2,7 @@
    <img src="screenshots/logo.png" width=300px alt="SwiftDate" title="Kotlinx DateTime Fun">
  </p>
 
-<h3 align="center"><strong>Kotlinx DateTime Fun</strong></h3>
+<h1 align="center"><strong>Kotlinx DateTime Fun</strong></h1>
 <p align="center">Kotlinx DateTime extension functions.</p>
 <p align="center">
   <a href="https://github.com/sami-eljabali/kotlinx-datetime-fun/actions?query=branch%3Amain"><img alt="Build Status" src="https://github.com/sami-eljabali/kotlinx-datetime-fun/actions/workflows/main.yml/badge.svg"/></a>
