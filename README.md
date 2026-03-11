@@ -34,7 +34,7 @@ _Convert strings into [Kotlinx DateTime](https://github.com/Kotlin/kotlinx-datet
 val result = "01:30 AM".toLocalTime()
 val result = "2021-06-07".toLocalDate()
 val result = "06/07/2021".toLocalDate("MM/dd/yyyy")
-val result = "06/07/2021".toLocalDate("yyyy-MM-dd", "MM/dd/yyyy") // fall back parsing formats
+val result = "06/07/2021".toLocalDate("MM/dd/yyyy", "yyyy-MM-dd") // fall back parsing formats
 val result = "2024-11-15T12:34:56.123456Z".toLocalDateTime() // handles fractional seconds that Kotlinx DateTime doesn't
 ```
 
@@ -81,9 +81,9 @@ val result = date.getNext(DayOfWeek.MONDAY)
 ### Preset Dates
 _Quickly access commonly used dates_
 ```kotlin
-val result = LocalTime.now()
-val result = LocalDate.startOfYear()
-val result = LocalDateTime.yesterday()
+val result = LocalTimes.now()
+val result = LocalDates.startOfYear()
+val result = LocalDateTimes.yesterday()
 ```
 
 ## Installation
@@ -103,4 +103,4 @@ Star this repository __[as others have](https://github.com/sami-eljabali/kotlinx
 
 ## 🍪 Extras
 * [DateTimeFormats](https://gist.github.com/sami-eljabali/d9476427db7f39645d8f94f8a0707751) to help with day to day printing/parsing!
-* [Java Time Fun](https://github.com/sami-eljabali/java-time-fun) for JVM based projects.
+* [Java Time Fun](https://github.com/sami-eljabali/java-time-fun) library for JVM based projects.
