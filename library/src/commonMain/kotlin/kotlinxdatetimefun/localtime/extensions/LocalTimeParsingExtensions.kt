@@ -4,7 +4,7 @@ import kotlinx.datetime.LocalTime
 import kotlinx.datetime.format.FormatStringsInDatetimeFormats
 import kotlinx.datetime.format.byUnicodePattern
 
-fun String.toLocalTime(vararg formats: String?): LocalTime? {
+fun String.toLocaltime(vararg formats: String?): LocalTime? {
     val parsingAttempts = if (formats.isEmpty()) listOf<String?>(null) else formats.asList()
     for (format in parsingAttempts) {
         val parsedTime = if (format.isNullOrBlank()) {

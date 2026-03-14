@@ -2,7 +2,7 @@ package localdatetime
 
 import kotlinx.datetime.LocalDateTime
 import kotlinxdatetimefun.localdatetime.extensions.print
-import kotlinxdatetimefun.localdatetime.extensions.toLocalDateTime
+import kotlinxdatetimefun.localdatetime.extensions.toLocalDatetime
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 
@@ -21,7 +21,7 @@ class LocalDateTimeParsingExtensionsTest {
     @Test
     fun `test valid ISO date time without format`() {
         val input = "2024-04-13T12:34:56"
-        val result = input.toLocalDateTime()
+        val result = input.toLocalDatetime()
         assertNotNull(result)
         assertEquals(LocalDateTime(2024, 4, 13, 12, 34, 56), result)
     }
@@ -29,7 +29,7 @@ class LocalDateTimeParsingExtensionsTest {
     @Test
     fun `test invalid date without format returns null`() {
         val input = "not-a-date"
-        val result = input.toLocalDateTime()
+        val result = input.toLocalDatetime()
         assertNull(result)
     }
 
@@ -37,7 +37,7 @@ class LocalDateTimeParsingExtensionsTest {
     fun `test valid formatted date time with format`() {
         val input = "13-04-2024 12:34:56"
         val format = "dd-MM-yyyy HH:mm:ss"
-        val result = input.toLocalDateTime(format)
+        val result = input.toLocalDatetime(format)
         assertNotNull(result)
         assertEquals(LocalDateTime(2024, 4, 13, 12, 34, 56), result)
     }
@@ -45,7 +45,7 @@ class LocalDateTimeParsingExtensionsTest {
     @Test
     fun `test tries provided date time formats in order`() {
         val input = "13-04-2024 12:34:56"
-        val result = input.toLocalDateTime("yyyy/MM/dd HH:mm:ss", "dd-MM-yyyy HH:mm:ss")
+        val result = input.toLocalDatetime("yyyy/MM/dd HH:mm:ss", "dd-MM-yyyy HH:mm:ss")
 
         assertNotNull(result)
         assertEquals(LocalDateTime(2024, 4, 13, 12, 34, 56), result)
@@ -55,22 +55,22 @@ class LocalDateTimeParsingExtensionsTest {
     fun `test valid ISO date time with incorrect format returns null`() {
         val input = "2024-04-13T12:34:56"
         val format = "dd-MM-yyyy HH:mm:ss" // doesn't match the input
-        val result = input.toLocalDateTime(format)
+        val result = input.toLocalDatetime(format)
         assertNotNull(result)
     }
 
     @Test
     fun `test null format behaves as no format`() {
         val input = "2024-04-13T08:00:00"
-        val result1 = input.toLocalDateTime()
-        val result2 = input.toLocalDateTime(null)
+        val result1 = input.toLocalDatetime()
+        val result2 = input.toLocalDatetime(null)
         assertEquals(result1, result2)
     }
 
     @Test
     fun `test empty string returns null`() {
         val input = ""
-        val result = input.toLocalDateTime()
+        val result = input.toLocalDatetime()
         assertNull(result)
     }
 
@@ -82,8 +82,8 @@ class LocalDateTimeParsingExtensionsTest {
         val dateInTextWithZ = "${dateInText}Z"
 
         // when
-        val dateParsed: LocalDateTime = dateInTextWithZ.toLocalDateTime() ?: throw RuntimeException("Failed to parse")
-        val dateParsedWithZ: LocalDateTime = dateInText.toLocalDateTime() ?: throw RuntimeException("Failed to parse")
+        val dateParsed: LocalDateTime = dateInTextWithZ.toLocalDatetime() ?: throw RuntimeException("Failed to parse")
+        val dateParsedWithZ: LocalDateTime = dateInText.toLocalDatetime() ?: throw RuntimeException("Failed to parse")
 
         // then
         assertEquals(dateInTextWithZ, dateParsed.print(ISO_8601))
@@ -98,7 +98,7 @@ class LocalDateTimeParsingExtensionsTest {
         val dateInText = "2023-07-26T12:34:56.1Z"
 
         // when
-        val dateParsed: LocalDateTime = dateInText.toLocalDateTime() ?: throw RuntimeException("Failed to parse")
+        val dateParsed: LocalDateTime = dateInText.toLocalDatetime() ?: throw RuntimeException("Failed to parse")
 
         // then
         assertEquals(dateInText, dateParsed.print(ISO_8601_S))
@@ -111,7 +111,7 @@ class LocalDateTimeParsingExtensionsTest {
         val dateInText = "2023-07-26T12:34:56.12Z"
 
         // when
-        val dateParsed: LocalDateTime = dateInText.toLocalDateTime() ?: throw RuntimeException("Failed to parse")
+        val dateParsed: LocalDateTime = dateInText.toLocalDatetime() ?: throw RuntimeException("Failed to parse")
 
         // then
         assertEquals(dateInText, dateParsed.print(ISO_8601_SS))
@@ -124,7 +124,7 @@ class LocalDateTimeParsingExtensionsTest {
         val dateInText = "2023-07-26T12:34:56.123Z"
 
         // when
-        val dateParsed: LocalDateTime = dateInText.toLocalDateTime() ?: throw RuntimeException("Failed to parse")
+        val dateParsed: LocalDateTime = dateInText.toLocalDatetime() ?: throw RuntimeException("Failed to parse")
 
         // then
         assertEquals(dateInText, dateParsed.print(ISO_8601_SSS))
@@ -137,7 +137,7 @@ class LocalDateTimeParsingExtensionsTest {
         val dateInText = "2023-07-26T12:34:56.1234Z"
 
         // when
-        val dateParsed: LocalDateTime = dateInText.toLocalDateTime() ?: throw RuntimeException("Failed to parse")
+        val dateParsed: LocalDateTime = dateInText.toLocalDatetime() ?: throw RuntimeException("Failed to parse")
 
         // then
         assertEquals(dateInText, dateParsed.print(ISO_8601_4S))
@@ -151,8 +151,8 @@ class LocalDateTimeParsingExtensionsTest {
         val dateInTextWithZ = "${dateInText}Z"
 
         // when
-        val dateParsed: LocalDateTime = dateInTextWithZ.toLocalDateTime() ?: throw RuntimeException("Failed to parse")
-        val dateParsedWithZ: LocalDateTime = dateInText.toLocalDateTime() ?: throw RuntimeException("Failed to parse")
+        val dateParsed: LocalDateTime = dateInTextWithZ.toLocalDatetime() ?: throw RuntimeException("Failed to parse")
+        val dateParsedWithZ: LocalDateTime = dateInText.toLocalDatetime() ?: throw RuntimeException("Failed to parse")
 
         // then
         assertEquals(dateInTextWithZ, dateParsed.print(ISO_8601_5S))
@@ -167,7 +167,7 @@ class LocalDateTimeParsingExtensionsTest {
         val dateInText = "2023-07-26T12:34:56.123456Z"
 
         // when
-        val dateParsed: LocalDateTime = dateInText.toLocalDateTime() ?: throw RuntimeException("Failed to parse")
+        val dateParsed: LocalDateTime = dateInText.toLocalDatetime() ?: throw RuntimeException("Failed to parse")
 
         // then
         assertEquals(dateInText, dateParsed.print(ISO_8601_6S))
