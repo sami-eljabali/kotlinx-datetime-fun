@@ -13,7 +13,7 @@ import kotlinx.datetime.format.byUnicodePattern
  * @return LocalDate? Null means couldn't parse, else parsed LocalDate.
  */
 @OptIn(FormatStringsInDatetimeFormats::class)
-fun String.toLocalDate(vararg formats: String?): LocalDate? {
+fun String.toLocaldate(vararg formats: String?): LocalDate? {
     val parsingAttempts = if (formats.isEmpty()) listOf<String?>(null) else formats.asList()
     for (format in parsingAttempts) {
         val parsedDate = if (format.isNullOrBlank()) {
