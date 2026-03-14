@@ -40,7 +40,7 @@ $dokka.location:kotlinxdatetimefun.localdate.extensions//plusDays/kotlinx.dateti
 $dokka.location:kotlinxdatetimefun.localdate.extensions//plusMonths/kotlinx.datetime.LocalDate#kotlin.Int/PointingToDeclaration/library/kotlinxdatetimefun.localdate.extensions/plus-months.html
 $dokka.location:kotlinxdatetimefun.localdate.extensions//plusYears/kotlinx.datetime.LocalDate#kotlin.Int/PointingToDeclaration/library/kotlinxdatetimefun.localdate.extensions/plus-years.html
 $dokka.location:kotlinxdatetimefun.localdate.extensions//print/kotlinx.datetime.LocalDate#kotlin.String/PointingToDeclaration/library/kotlinxdatetimefun.localdate.extensions/print.html
-$dokka.location:kotlinxdatetimefun.localdate.extensions//toLocalDate/kotlin.String#kotlin.Array[kotlin.String?]/PointingToDeclaration/library/kotlinxdatetimefun.localdate.extensions/to-local-date.html
+$dokka.location:kotlinxdatetimefun.localdate.extensions//toLocaldate/kotlin.String#kotlin.Array[kotlin.String?]/PointingToDeclaration/library/kotlinxdatetimefun.localdate.extensions/to-localdate.html
 $dokka.location:kotlinxdatetimefun.localdate////PointingToDeclaration/library/kotlinxdatetimefun.localdate/index.html
 $dokka.location:kotlinxdatetimefun.localdate//endOfYear/kotlinx.datetime.LocalDate.Companion#kotlinx.datetime.TimeZone/PointingToDeclaration/library/kotlinxdatetimefun.localdate/end-of-year.html
 $dokka.location:kotlinxdatetimefun.localdate//lastFriday/kotlinx.datetime.LocalDate.Companion#kotlinx.datetime.TimeZone/PointingToDeclaration/library/kotlinxdatetimefun.localdate/last-friday.html
@@ -118,7 +118,7 @@ $dokka.location:kotlinxdatetimefun.localdatetime.extensions//plusSeconds/kotlinx
 $dokka.location:kotlinxdatetimefun.localdatetime.extensions//plusYears/kotlinx.datetime.LocalDateTime#kotlin.Int#kotlinx.datetime.TimeZone/PointingToDeclaration/library/kotlinxdatetimefun.localdatetime.extensions/plus-years.html
 $dokka.location:kotlinxdatetimefun.localdatetime.extensions//print/kotlinx.datetime.LocalDateTime#kotlin.String/PointingToDeclaration/library/kotlinxdatetimefun.localdatetime.extensions/print.html
 $dokka.location:kotlinxdatetimefun.localdatetime.extensions//toLocalDate/kotlinx.datetime.LocalDateTime#/PointingToDeclaration/library/kotlinxdatetimefun.localdatetime.extensions/to-local-date.html
-$dokka.location:kotlinxdatetimefun.localdatetime.extensions//toLocalDateTime/kotlin.String#kotlin.Array[kotlin.String?]/PointingToDeclaration/library/kotlinxdatetimefun.localdatetime.extensions/to-local-date-time.html
+$dokka.location:kotlinxdatetimefun.localdatetime.extensions//toLocalDatetime/kotlin.String#kotlin.Array[kotlin.String?]/PointingToDeclaration/library/kotlinxdatetimefun.localdatetime.extensions/to-local-datetime.html
 $dokka.location:kotlinxdatetimefun.localdatetime.extensions//toLocalTime/kotlinx.datetime.LocalDateTime#/PointingToDeclaration/library/kotlinxdatetimefun.localdatetime.extensions/to-local-time.html
 $dokka.location:kotlinxdatetimefun.localdatetime.extensions//withLocalTime/kotlinx.datetime.LocalDateTime#kotlinx.datetime.LocalTime/PointingToDeclaration/library/kotlinxdatetimefun.localdatetime.extensions/with-local-time.html
 $dokka.location:kotlinxdatetimefun.localdatetime////PointingToDeclaration/library/kotlinxdatetimefun.localdatetime/index.html
@@ -155,7 +155,7 @@ $dokka.location:kotlinxdatetimefun.localtime.extensions//isInAm/kotlinx.datetime
 $dokka.location:kotlinxdatetimefun.localtime.extensions//isInPm/kotlinx.datetime.LocalTime#/PointingToDeclaration/library/kotlinxdatetimefun.localtime.extensions/is-in-pm.html
 $dokka.location:kotlinxdatetimefun.localtime.extensions//periodUntil/kotlinx.datetime.LocalTime#kotlinx.datetime.LocalTime/PointingToDeclaration/library/kotlinxdatetimefun.localtime.extensions/period-until.html
 $dokka.location:kotlinxdatetimefun.localtime.extensions//print/kotlinx.datetime.LocalTime#kotlin.String/PointingToDeclaration/library/kotlinxdatetimefun.localtime.extensions/print.html
-$dokka.location:kotlinxdatetimefun.localtime.extensions//toLocalTime/kotlin.String#kotlin.Array[kotlin.String?]/PointingToDeclaration/library/kotlinxdatetimefun.localtime.extensions/to-local-time.html
+$dokka.location:kotlinxdatetimefun.localtime.extensions//toLocaltime/kotlin.String#kotlin.Array[kotlin.String?]/PointingToDeclaration/library/kotlinxdatetimefun.localtime.extensions/to-localtime.html
 $dokka.location:kotlinxdatetimefun.localtime////PointingToDeclaration/library/kotlinxdatetimefun.localtime/index.html
 $dokka.location:kotlinxdatetimefun.localtime//MAX/kotlinx.datetime.LocalTime.Companion#/PointingToDeclaration/library/kotlinxdatetimefun.localtime/-m-a-x.html
 $dokka.location:kotlinxdatetimefun.localtime//MIN/kotlinx.datetime.LocalTime.Companion#/PointingToDeclaration/library/kotlinxdatetimefun.localtime/-m-i-n.html
