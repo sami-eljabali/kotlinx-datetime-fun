@@ -15,7 +15,7 @@
 -     byUnicodePattern("dd/MM/yyyy")
 - }
 - val date = LocalDate.parse("11/15/2024", localDateFormat)
-+ val date = "11/15/2024".toLocalDate("dd/MM/yyyy")
++ val date = "11/15/2024".toLocaldate("dd/MM/yyyy")
 
 - val dateFormat = LocalDate.Format {
 -     byUnicodePattern("dd/MM/yyyy")
@@ -31,11 +31,11 @@
 ### Parsing
 _Convert strings into [Kotlinx DateTime](https://github.com/Kotlin/kotlinx-datetime) objects with ease_
 ```kotlin
-val result = "01:30 AM".toLocalTime()
-val result = "2021-06-07".toLocalDate()
-val result = "06/07/2021".toLocalDate("MM/dd/yyyy")
-val result = "06/07/2021".toLocalDate("MM/dd/yyyy", "yyyy-MM-dd") // fall back parsing formats
-val result = "2024-11-15T12:34:56.123456Z".toLocalDateTime() // handles fractional seconds that Kotlinx DateTime doesn't
+val result = "01:30 AM".toLocaltime()
+val result = "2021-06-07".toLocaldate()
+val result = "06/07/2021".toLocaldate("MM/dd/yyyy")
+val result = "06/07/2021".toLocaldate("MM/dd/yyyy", "yyyy-MM-dd") // fall back parsing formats
+val result = "2024-11-15T12:34:56.123456Z".toLocalDatetime() // handles fractional seconds that Kotlinx DateTime doesn't
 ```
 
 ### Comparisons
@@ -64,7 +64,7 @@ val result = dateA.isAfterEqualTime(dateB)
 ### Formatting
 _Print dates and times using a custom format_
 ```kotlin
-val date = "2021-07-06".toLocalDate()
+val date = "2021-07-06".toLocaldate()
 val result = date.print("MM/dd/yyyy")
 ```
 
