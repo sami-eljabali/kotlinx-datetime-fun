@@ -55,6 +55,13 @@ fun LocalDate.getNext(dayOfWeek: DayOfWeek, countingInThisDay: Boolean = false):
 fun LocalDate.atStartOfDay(): LocalDateTime = LocalDateTime(this, LocalTime.MIN)
 fun LocalDate.atEndOfDay(): LocalDateTime = LocalDateTime(this, LocalTime.MAX)
 
+fun LocalDate.atStartOfMonth(): LocalDate = LocalDate(year, month, 1)
+fun LocalDate.atEndOfMonth(): LocalDate = LocalDate(year, month, getDaysInMonth())
+
+fun LocalDate.withYear(year: Int): LocalDate = LocalDate(year, month, day.coerceAtMost(daysInMonth(year, month.number)))
+fun LocalDate.withMonth(month: Int): LocalDate = LocalDate(year, month, day.coerceAtMost(daysInMonth(year, month)))
+fun LocalDate.withDay(day: Int): LocalDate = LocalDate(year, month, day)
+
 private fun isLeapYear(year: Int): Boolean = year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)
 
 private fun daysInMonth(year: Int, month: Int): Int = when (month) {

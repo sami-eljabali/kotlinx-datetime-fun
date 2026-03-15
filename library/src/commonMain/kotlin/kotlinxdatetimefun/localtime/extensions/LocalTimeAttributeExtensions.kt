@@ -9,6 +9,8 @@ fun LocalTime.isAtStartOfDay(): Boolean = this == LocalTime.MIN
 
 fun LocalTime.isAtEndOfDay(): Boolean = this == LocalTime.MAX
 
+fun LocalTime.isAtNoon(): Boolean = this == LocalTime.NOON
+
 fun LocalTime.isInAm(): Boolean = this < LocalTime.NOON
 
 fun LocalTime.isInPm(): Boolean = this >= LocalTime.NOON
