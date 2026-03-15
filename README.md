@@ -81,9 +81,9 @@ val result = date.getNext(DayOfWeek.MONDAY)
 ### Preset Dates
 _Quickly access commonly used dates_
 ```kotlin
-val result = LocalTimes.now()
-val result = LocalDates.startOfYear()
-val result = LocalDateTimes.yesterday()
+val result = LocalTime.now()
+val result = LocalDate.startOfYear()
+val result = LocalDateTime.yesterday()
 ```
 
 ## Installation
