@@ -1,5 +1,6 @@
 package kotlinxdatetimefun.localdate.extensions
 
+import kotlinx.datetime.DayOfWeek
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.number
 import kotlinxdatetimefun.isLeapYear
@@ -14,3 +15,7 @@ fun LocalDate.getDaysInMonth(): Int = when (month.number) {
     2 -> if (isInLeapYear()) 29 else 28
     else -> throw IllegalStateException("Invalid month number: ${month.number}")
 }
+
+fun LocalDate.isWeekend(): Boolean = dayOfWeek == DayOfWeek.SATURDAY || dayOfWeek == DayOfWeek.SUNDAY
+
+fun LocalDate.isWeekday(): Boolean = !isWeekend()

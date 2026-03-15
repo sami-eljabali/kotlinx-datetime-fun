@@ -7,6 +7,18 @@ import kotlinxdatetimefun.localdatetime.extensions.getPeriodDifference
 import kotlinxdatetimefun.localdatetime.extensions.withLocalTime
 import kotlinxdatetimefun.localdatetime.of
 
+// region Comparisons
+fun LocalTime.isEqual(localTimeB: LocalTime): Boolean = this.compareTo(localTimeB) == 0
+
+fun LocalTime.isBefore(localTimeB: LocalTime): Boolean = this < localTimeB
+
+fun LocalTime.isBeforeEqual(localTimeB: LocalTime): Boolean = this <= localTimeB
+
+fun LocalTime.isAfter(localTimeB: LocalTime): Boolean = this > localTimeB
+
+fun LocalTime.isAfterEqual(localTimeB: LocalTime): Boolean = this >= localTimeB
+// endregion
+
 fun LocalTime.periodUntil(localTimeB: LocalTime): DateTimePeriod {
     val localDateTimeA = LocalDateTime.of(2025, 1, 1).withLocalTime(this)
     val localDateTimeB = LocalDateTime.of(2025, 1, 1).withLocalTime(localTimeB)

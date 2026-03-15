@@ -4,7 +4,9 @@ import kotlinx.datetime.DayOfWeek
 import kotlinx.datetime.LocalDateTime
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toLocalDateTime
+import kotlinxdatetimefun.localdatetime.extensions.atEndOfMonth
 import kotlinxdatetimefun.localdatetime.extensions.atStartOfDay
+import kotlinxdatetimefun.localdatetime.extensions.atStartOfMonth
 import kotlinxdatetimefun.localdatetime.extensions.getLast
 import kotlinxdatetimefun.localdatetime.extensions.getNext
 import kotlinxdatetimefun.localdatetime.extensions.minusDays
@@ -34,3 +36,6 @@ fun LocalDateTime.Companion.nextSunday(timeZone: TimeZone = TimeZone.currentSyst
 
 fun LocalDateTime.Companion.startOfYear(timeZone: TimeZone = TimeZone.currentSystemDefault()): LocalDateTime = LocalDateTime.of(today(timeZone).year, 1, 1)
 fun LocalDateTime.Companion.endOfYear(timeZone: TimeZone = TimeZone.currentSystemDefault()): LocalDateTime = LocalDateTime.of(today(timeZone).year, 12, 31)
+
+fun LocalDateTime.Companion.startOfMonth(timeZone: TimeZone = TimeZone.currentSystemDefault()): LocalDateTime = today(timeZone).atStartOfMonth()
+fun LocalDateTime.Companion.endOfMonth(timeZone: TimeZone = TimeZone.currentSystemDefault()): LocalDateTime = today(timeZone).atEndOfMonth()

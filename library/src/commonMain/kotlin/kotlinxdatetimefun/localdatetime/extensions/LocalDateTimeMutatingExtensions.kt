@@ -7,9 +7,14 @@ import kotlinx.datetime.LocalTime
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toInstant
 import kotlinx.datetime.toLocalDateTime
+import kotlinxdatetimefun.localdate.extensions.atEndOfMonth
+import kotlinxdatetimefun.localdate.extensions.atStartOfMonth
 import kotlinxdatetimefun.localdate.extensions.plusDays
 import kotlinxdatetimefun.localdate.extensions.plusMonths
 import kotlinxdatetimefun.localdate.extensions.plusYears
+import kotlinxdatetimefun.localdate.extensions.withDay
+import kotlinxdatetimefun.localdate.extensions.withMonth
+import kotlinxdatetimefun.localdate.extensions.withYear
 import kotlin.time.Duration.Companion.hours
 import kotlin.time.Duration.Companion.minutes
 import kotlin.time.Duration.Companion.seconds
@@ -98,6 +103,20 @@ fun LocalDateTime.plusSeconds(seconds: Int, timeZone: TimeZone = TimeZone.curren
     this.toInstant(timeZone)
         .plus(seconds.seconds)
         .toLocalDateTime(timeZone)
+
+fun LocalDateTime.atStartOfMonth(): LocalDateTime =
+    LocalDateTime(this.toLocalDate().atStartOfMonth(), LocalTime(0, 0, 0, 0))
+
+fun LocalDateTime.atEndOfMonth(): LocalDateTime =
+    LocalDateTime(this.toLocalDate().atEndOfMonth(), LocalTime(23, 59, 59, 999_999_999))
+
+fun LocalDateTime.withYear(year: Int): LocalDateTime = LocalDateTime(this.toLocalDate().withYear(year), this.toLocalTime())
+fun LocalDateTime.withMonth(month: Int): LocalDateTime = LocalDateTime(this.toLocalDate().withMonth(month), this.toLocalTime())
+fun LocalDateTime.withDay(day: Int): LocalDateTime = LocalDateTime(this.toLocalDate().withDay(day), this.toLocalTime())
+fun LocalDateTime.withHour(hour: Int): LocalDateTime = withLocalTime(LocalTime(hour, minute, second, nanosecond))
+fun LocalDateTime.withMinute(minute: Int): LocalDateTime = withLocalTime(LocalTime(hour, minute, second, nanosecond))
+fun LocalDateTime.withSecond(second: Int): LocalDateTime = withLocalTime(LocalTime(hour, minute, second, nanosecond))
+fun LocalDateTime.withNanosecond(nanosecond: Int): LocalDateTime = withLocalTime(LocalTime(hour, minute, second, nanosecond))
 
 fun LocalDateTime.getLast(
     dayOfWeek: DayOfWeek,
