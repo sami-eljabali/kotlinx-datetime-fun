@@ -2,6 +2,9 @@ package kotlinxdatetimefun.localdatetime
 
 import kotlinx.datetime.LocalDateTime
 import kotlinx.datetime.Month
+import kotlinx.datetime.TimeZone
+import kotlinx.datetime.toLocalDateTime
+import kotlin.time.Instant
 
 fun LocalDateTime.Companion.of(
     year: Int,
@@ -20,3 +23,10 @@ fun LocalDateTime.Companion.of(
     second = second,
     nanosecond = nanosecond
 )
+
+fun LocalDateTime.Companion.of(
+    epochMilliseconds: Long,
+    timeZone: TimeZone = TimeZone.currentSystemDefault()
+): LocalDateTime =
+    Instant.fromEpochMilliseconds(epochMilliseconds)
+        .toLocalDateTime(timeZone)
