@@ -120,7 +120,7 @@ val result = date.getNext(DayOfWeek.MONDAY)
 ### Time Zone Conversion
 _Convert between time zones_
 ```kotlin
-val result = dateTime.fromZoneToZone(from = ZoneIds.AMERICA_NEW_YORK, to = ZoneIds.ASIA_TOKYO)
+val result = dateTime.fromZoneToZone(ZoneIds.AMERICA_NEW_YORK, ZoneIds.ASIA_TOKYO)
 val result = dateTime.fromUtcToZone(ZoneIds.EUROPE_LONDON)
 val result = dateTime.fromZoneToUtc(ZoneIds.AMERICA_LOS_ANGELES)
 ```
@@ -132,6 +132,7 @@ _Quickly access commonly used dates_
 val result = LocalTime.now()
 val result = LocalDate.now()
 val result = LocalDateTime.now()
+val result = LocalDateTime.now(ZoneIds.AMERICA_LOS_ANGELES)
 
 // Relative days
 val result = LocalDate.yesterday()
