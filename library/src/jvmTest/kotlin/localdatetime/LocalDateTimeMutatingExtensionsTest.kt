@@ -7,6 +7,9 @@ import kotlinx.datetime.TimeZone
 import kotlinx.datetime.number
 import kotlinxdatetimefun.localdatetime.extensions.atEndOfDay
 import kotlinxdatetimefun.localdatetime.extensions.atStartOfDay
+import kotlinxdatetimefun.localdatetime.extensions.fromUtcToZone
+import kotlinxdatetimefun.localdatetime.extensions.fromZoneToUtc
+import kotlinxdatetimefun.localdatetime.extensions.fromZoneToZone
 import kotlinxdatetimefun.localdatetime.extensions.getLast
 import kotlinxdatetimefun.localdatetime.extensions.getNext
 import kotlinxdatetimefun.localdatetime.extensions.minusDays
@@ -248,5 +251,89 @@ class LocalDateTimeMutatingExtensionsTest {
         assertEquals(2023, result.year)
         assertEquals(2, result.month.number)
         assertEquals(28, result.day)
+    }
+
+    // fromZoneToZone tests
+
+    @Test
+    fun `fromZoneToZone converts time between different zones`() {
+        val utcDateTime = LocalDateTime(2023, 6, 15, 12, 0, 0)
+        val result = utcDateTime.fromZoneToZone(TimeZone.UTC, TimeZone.of("America/New_York"))
+        assertEquals(2023, result.year)
+        assertEquals(6, result.month.number)
+        assertEquals(15, result.day)
+        assertEquals(8, result.hour) // UTC-4 (EDT)
+        assertEquals(0, result.minute)
+    }
+
+    @Test
+    fun `fromZoneToZone returns same instance when zones are equal`() {
+        val result = testDateTime.fromZoneToZone(TimeZone.UTC, TimeZone.UTC)
+        assertEquals(testDateTime, result)
+    }
+
+    @Test
+    fun `fromZoneToZone crosses date boundary correctly`() {
+        val lateUtc = LocalDateTime(2023, 6, 15, 23, 0, 0)
+        val result = lateUtc.fromZoneToZone(TimeZone.UTC, TimeZone.of("Asia/Tokyo")) // UTC+9
+        assertEquals(2023, result.year)
+        assertEquals(6, result.month.number)
+        assertEquals(16, result.day)
+        assertEquals(8, result.hour)
+    }
+
+    // fromUtcToZone tests
+
+    @Test
+    fun `fromUtcToZone converts UTC to target zone`() {
+        val utcDateTime = LocalDateTime(2023, 6, 15, 12, 0, 0)
+        val result = utcDateTime.fromUtcToZone(TimeZone.of("Europe/London")) // BST = UTC+1
+        assertEquals(13, result.hour)
+        assertEquals(0, result.minute)
+    }
+
+    @Test
+    fun `fromUtcToZone returns same instance when toZone is UTC`() {
+        val result = testDateTime.fromUtcToZone(TimeZone.UTC)
+        assertEquals(testDateTime, result)
+    }
+
+    @Test
+    fun `fromUtcToZone handles negative offset correctly`() {
+        val utcDateTime = LocalDateTime(2023, 6, 15, 2, 0, 0)
+        val result = utcDateTime.fromUtcToZone(TimeZone.of("America/Los_Angeles")) // PDT = UTC-7
+        assertEquals(2023, result.year)
+        assertEquals(6, result.month.number)
+        assertEquals(14, result.day)
+        assertEquals(19, result.hour)
+    }
+
+    // fromZoneToUtc tests
+
+    @Test
+    fun `fromZoneToUtc converts local zone to UTC`() {
+        val nyDateTime = LocalDateTime(2023, 6, 15, 8, 0, 0)
+        val result = nyDateTime.fromZoneToUtc(TimeZone.of("America/New_York")) // EDT = UTC-4
+        assertEquals(2023, result.year)
+        assertEquals(6, result.month.number)
+        assertEquals(15, result.day)
+        assertEquals(12, result.hour)
+        assertEquals(0, result.minute)
+    }
+
+    @Test
+    fun `fromZoneToUtc returns same instance when fromZone is UTC`() {
+        val result = testDateTime.fromZoneToUtc(TimeZone.UTC)
+        assertEquals(testDateTime, result)
+    }
+
+    @Test
+    fun `fromZoneToUtc handles positive offset crossing date boundary`() {
+        val tokyoDateTime = LocalDateTime(2023, 6, 16, 1, 0, 0)
+        val result = tokyoDateTime.fromZoneToUtc(TimeZone.of("Asia/Tokyo")) // UTC+9
+        assertEquals(2023, result.year)
+        assertEquals(6, result.month.number)
+        assertEquals(15, result.day)
+        assertEquals(16, result.hour)
     }
 }
