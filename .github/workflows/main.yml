@@ -49,3 +49,23 @@ jobs:
 
       - name: iOS tests
         run: bash ./gradlew :library:iosSimulatorArm64Test :library:iosX64Test --stacktrace
+
+  js-tests:
+    name: Run JS Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v5
+        with:
+          java-version: 21
+          distribution: 'adopt'
+
+      - name: Make Gradle executable
+        run: chmod +x ./gradlew
+
+      - name: JS tests
+        run: bash ./gradlew :library:jsTest --stacktrace
