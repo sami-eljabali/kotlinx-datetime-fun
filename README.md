@@ -3,7 +3,7 @@
  </p>
 
 <h1 align="center"><strong>Kotlinx DateTime Fun</strong></h1>
-<p align="center">Kotlinx DateTime extension functions.</p>
+<p align="center">Every kotlinx.datetime extension function you'll ever need.</p>
 <p align="center">
   <a href="https://github.com/sami-eljabali/kotlinx-datetime-fun/actions?query=branch%3Amain"><img alt="Build Status" src="https://github.com/sami-eljabali/kotlinx-datetime-fun/actions/workflows/main.yml/badge.svg"/></a>
   <a href="https://repo1.maven.org/maven2/org/eljabali/sami/kotlinxdatetimefun/kotlinxdatetimefun/"><img alt="Maven Central" src="https://img.shields.io/maven-central/v/org.eljabali.sami.kotlinxdatetimefun/kotlinxdatetimefun?color=blue"/></a>
@@ -26,6 +26,9 @@
 - val result = date.plus(days * -1, DateTimeUnit.DAY)
 + val result = date.minusDays(days)
 ```
+
+## Platforms
+JVM · Android · iOS · JS (browser & Node.js)
 
 ## Features
 ### Parsing
@@ -68,26 +71,88 @@ val date = "2021-07-06".toLocaldate()
 val result = date.print("MM/dd/yyyy")
 ```
 
-### Attributes & Mutations
-_Query and transform date/time attributes_
+### Attributes
+_Query date/time properties_
 ```kotlin
-val result = date.isAtStartOfDay()
+// LocalDate
+val result = date.isWeekend()
+val result = date.isWeekday()
+val result = date.isInLeapYear()
 val result = date.getDaysInMonth()
+val result = date.getMonthBaseZero()
 
+// LocalTime
+val result = time.isAtStartOfDay()
+val result = time.isAtEndOfDay()
+val result = time.isAtNoon()
+val result = time.isInAm()
+val result = time.isInPm()
+```
+
+### Mutations
+_Add, subtract, and set fields_
+```kotlin
+// Date arithmetic
+val result = date.plusDays(7)
+val result = date.minusMonths(2)
+val result = date.plusYears(1)
+
+// Time arithmetic
+val result = time.plusHours(3)
+val result = time.minusMinutes(15)
+
+// Field setters
+val result = date.withYear(2025)
+val result = date.withMonth(6)
+val result = dateTime.withHour(9)
+
+// Boundaries
+val result = date.atStartOfDay()
+val result = date.atEndOfDay()
+val result = date.atStartOfMonth()
+val result = date.atEndOfMonth()
+
+// Navigation
 val result = date.getLast(DayOfWeek.FRIDAY)
 val result = date.getNext(DayOfWeek.MONDAY)
+```
+
+### Time Zone Conversion
+_Convert between time zones_
+```kotlin
+val result = dateTime.fromZoneToZone(from = ZoneIds.AMERICA_NEW_YORK, to = ZoneIds.ASIA_TOKYO)
+val result = dateTime.fromUtcToZone(ZoneIds.EUROPE_LONDON)
+val result = dateTime.fromZoneToUtc(ZoneIds.AMERICA_LOS_ANGELES)
 ```
 
 ### Preset Dates
 _Quickly access commonly used dates_
 ```kotlin
+// Now
 val result = LocalTime.now()
+val result = LocalDate.now()
+val result = LocalDateTime.now()
+
+// Relative days
+val result = LocalDate.yesterday()
+val result = LocalDate.today()
+val result = LocalDate.tomorrow()
+
+// Day-of-week shortcuts
+val result = LocalDate.lastFriday()
+val result = LocalDate.nextMonday()
+val result = LocalDateTime.lastSunday()
+val result = LocalDateTime.nextWednesday()
+
+// Period boundaries
 val result = LocalDate.startOfYear()
-val result = LocalDateTime.yesterday()
+val result = LocalDate.endOfYear()
+val result = LocalDate.startOfMonth()
+val result = LocalDate.endOfMonth()
 ```
 
 ## Installation
-Add the following to your module’s `build.gradle`:
+Add the following to your module's `build.gradle`:
 ```gradle
 repositories {
   mavenCentral()
@@ -95,7 +160,7 @@ repositories {
 
 dependencies {
   implementation("org.eljabali.sami.kotlinxdatetimefun:kotlinxdatetimefun:0.0.5")
-}  
+}
 ```
 
 ## 😏 Find this library useful?
