@@ -153,3 +153,19 @@ fun LocalDateTime.getNext(
     }
     return nextLocalDate
 }
+
+fun LocalDateTime.fromZoneToZone(
+    fromZone: TimeZone = TimeZone.currentSystemDefault(),
+    toZone: TimeZone = TimeZone.currentSystemDefault()
+): LocalDateTime =
+    if (fromZone == toZone) this
+    else this.toInstant(fromZone).toLocalDateTime(toZone)
+
+fun LocalDateTime.fromUtcToZone(toZone: TimeZone = TimeZone.currentSystemDefault()): LocalDateTime =
+    if (toZone == TimeZone.UTC) this
+    else this.fromZoneToZone(TimeZone.UTC, toZone)
+
+
+fun LocalDateTime.fromZoneToUtc(fromZone: TimeZone = TimeZone.currentSystemDefault()): LocalDateTime =
+    if (fromZone == TimeZone.UTC) this
+    else this.fromZoneToZone(fromZone, TimeZone.UTC)
