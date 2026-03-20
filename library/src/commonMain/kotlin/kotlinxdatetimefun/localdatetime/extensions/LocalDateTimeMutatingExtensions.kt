@@ -9,12 +9,10 @@ import kotlinx.datetime.toInstant
 import kotlinx.datetime.toLocalDateTime
 import kotlinxdatetimefun.localdate.extensions.atEndOfMonth
 import kotlinxdatetimefun.localdate.extensions.atStartOfMonth
-import kotlinxdatetimefun.localdate.extensions.plusDays
-import kotlinxdatetimefun.localdate.extensions.plusMonths
-import kotlinxdatetimefun.localdate.extensions.plusYears
 import kotlinxdatetimefun.localdate.extensions.withDay
 import kotlinxdatetimefun.localdate.extensions.withMonth
 import kotlinxdatetimefun.localdate.extensions.withYear
+import kotlin.time.Duration.Companion.days
 import kotlin.time.Duration.Companion.hours
 import kotlin.time.Duration.Companion.minutes
 import kotlin.time.Duration.Companion.seconds
@@ -76,43 +74,33 @@ fun LocalDateTime.withMinute(minute: Int): LocalDateTime = withLocalTime(LocalTi
 fun LocalDateTime.withSecond(second: Int): LocalDateTime = withLocalTime(LocalTime(hour, minute, second, nanosecond))
 fun LocalDateTime.withNanosecond(nanosecond: Int): LocalDateTime = withLocalTime(LocalTime(hour, minute, second, nanosecond))
 
-fun LocalDateTime.minusYears(years: Int, timeZone: TimeZone = TimeZone.currentSystemDefault()): LocalDateTime =
-    LocalDateTime(this.toLocalDate().plusYears(-years), this.toLocalTime())
-fun LocalDateTime.plusYears(years: Int, timeZone: TimeZone = TimeZone.currentSystemDefault()): LocalDateTime =
-    LocalDateTime(this.toLocalDate().plusYears(years), this.toLocalTime())
-
-fun LocalDateTime.minusMonths(months: Int, timeZone: TimeZone = TimeZone.currentSystemDefault()): LocalDateTime =
-    LocalDateTime(this.toLocalDate().plusMonths(-months), this.toLocalTime())
-fun LocalDateTime.plusMonths(months: Int, timeZone: TimeZone = TimeZone.currentSystemDefault()): LocalDateTime =
-    LocalDateTime(this.toLocalDate().plusMonths(months), this.toLocalTime())
-
 fun LocalDateTime.minusDays(days: Int, timeZone: TimeZone = TimeZone.currentSystemDefault()): LocalDateTime =
-    LocalDateTime(this.toLocalDate().plusDays(-days), this.toLocalTime())
+    this.plusDays(-days, timeZone)
+
 fun LocalDateTime.plusDays(days: Int, timeZone: TimeZone = TimeZone.currentSystemDefault()): LocalDateTime =
-    LocalDateTime(this.toLocalDate().plusDays(days), this.toLocalTime())
+    this.toInstant(timeZone)
+        .plus(days.days)
+        .toLocalDateTime(timeZone)
 
 fun LocalDateTime.minusHours(hours: Int, timeZone: TimeZone = TimeZone.currentSystemDefault()): LocalDateTime =
-    this.toInstant(timeZone)
-        .plus((-hours).hours)
-        .toLocalDateTime(timeZone)
+    this.plusHours(-hours, timeZone)
+
 fun LocalDateTime.plusHours(hours: Int, timeZone: TimeZone = TimeZone.currentSystemDefault()): LocalDateTime =
     this.toInstant(timeZone)
         .plus(hours.hours)
         .toLocalDateTime(timeZone)
 
 fun LocalDateTime.minusMinutes(minutes: Int, timeZone: TimeZone = TimeZone.currentSystemDefault()): LocalDateTime =
-    this.toInstant(timeZone)
-        .plus((-minutes).minutes)
-        .toLocalDateTime(timeZone)
+    this.plusMinutes(-minutes, timeZone)
+
 fun LocalDateTime.plusMinutes(minutes: Int, timeZone: TimeZone = TimeZone.currentSystemDefault()): LocalDateTime =
     this.toInstant(timeZone)
         .plus(minutes.minutes)
         .toLocalDateTime(timeZone)
 
 fun LocalDateTime.minusSeconds(seconds: Int, timeZone: TimeZone = TimeZone.currentSystemDefault()): LocalDateTime =
-    this.toInstant(timeZone)
-        .plus((-seconds).seconds)
-        .toLocalDateTime(timeZone)
+    this.plusSeconds(-seconds, timeZone)
+
 fun LocalDateTime.plusSeconds(seconds: Int, timeZone: TimeZone = TimeZone.currentSystemDefault()): LocalDateTime =
     this.toInstant(timeZone)
         .plus(seconds.seconds)
@@ -164,7 +152,6 @@ fun LocalDateTime.fromZoneToZone(
 fun LocalDateTime.fromUtcToZone(toZone: TimeZone = TimeZone.currentSystemDefault()): LocalDateTime =
     if (toZone == TimeZone.UTC) this
     else this.fromZoneToZone(TimeZone.UTC, toZone)
-
 
 fun LocalDateTime.fromZoneToUtc(fromZone: TimeZone = TimeZone.currentSystemDefault()): LocalDateTime =
     if (fromZone == TimeZone.UTC) this
