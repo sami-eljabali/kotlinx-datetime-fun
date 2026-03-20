@@ -160,7 +160,7 @@ repositories {
 }
 
 dependencies {
-  implementation("org.eljabali.sami.kotlinxdatetimefun:kotlinxdatetimefun:0.0.6")
+  implementation("org.eljabali.sami.kotlinxdatetimefun:kotlinxdatetimefun:0.0.7")
 }
 ```
 
