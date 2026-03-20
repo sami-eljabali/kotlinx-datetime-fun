@@ -93,9 +93,9 @@ val result = time.isInPm()
 _Add, subtract, and set fields_
 ```kotlin
 // Date arithmetic
-val result = date.plusDays(7)
-val result = date.minusMonths(2)
-val result = date.plusYears(1)
+val result = date.plusSeconds(1)
+val result = date.minusMinutes(2)
+val result = date.plusDays(3)
 
 // Time arithmetic
 val result = time.plusHours(3)
