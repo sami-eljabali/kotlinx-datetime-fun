@@ -44,7 +44,7 @@ $dokka.location:kotlinxdatetimefun.localdate.extensions//plusDays/kotlinx.dateti
 $dokka.location:kotlinxdatetimefun.localdate.extensions//plusMonths/kotlinx.datetime.LocalDate#kotlin.Int/PointingToDeclaration/library/kotlinxdatetimefun.localdate.extensions/plus-months.html
 $dokka.location:kotlinxdatetimefun.localdate.extensions//plusYears/kotlinx.datetime.LocalDate#kotlin.Int/PointingToDeclaration/library/kotlinxdatetimefun.localdate.extensions/plus-years.html
 $dokka.location:kotlinxdatetimefun.localdate.extensions//print/kotlinx.datetime.LocalDate#kotlin.String/PointingToDeclaration/library/kotlinxdatetimefun.localdate.extensions/print.html
-$dokka.location:kotlinxdatetimefun.localdate.extensions//toLocaldate/kotlin.String#kotlin.String?/PointingToDeclaration/library/kotlinxdatetimefun.localdate.extensions/to-localdate.html
+$dokka.location:kotlinxdatetimefun.localdate.extensions//toLocaldate/kotlin.String#vararg(kotlin.String?)/PointingToDeclaration/library/kotlinxdatetimefun.localdate.extensions/to-localdate.html
 $dokka.location:kotlinxdatetimefun.localdate.extensions//withDay/kotlinx.datetime.LocalDate#kotlin.Int/PointingToDeclaration/library/kotlinxdatetimefun.localdate.extensions/with-day.html
 $dokka.location:kotlinxdatetimefun.localdate.extensions//withMonth/kotlinx.datetime.LocalDate#kotlin.Int/PointingToDeclaration/library/kotlinxdatetimefun.localdate.extensions/with-month.html
 $dokka.location:kotlinxdatetimefun.localdate.extensions//withYear/kotlinx.datetime.LocalDate#kotlin.Int/PointingToDeclaration/library/kotlinxdatetimefun.localdate.extensions/with-year.html
@@ -131,7 +131,7 @@ $dokka.location:kotlinxdatetimefun.localdatetime.extensions//plusMinutes/kotlinx
 $dokka.location:kotlinxdatetimefun.localdatetime.extensions//plusSeconds/kotlinx.datetime.LocalDateTime#kotlin.Int#kotlinx.datetime.TimeZone/PointingToDeclaration/library/kotlinxdatetimefun.localdatetime.extensions/plus-seconds.html
 $dokka.location:kotlinxdatetimefun.localdatetime.extensions//print/kotlinx.datetime.LocalDateTime#kotlin.String/PointingToDeclaration/library/kotlinxdatetimefun.localdatetime.extensions/print.html
 $dokka.location:kotlinxdatetimefun.localdatetime.extensions//toLocalDate/kotlinx.datetime.LocalDateTime#/PointingToDeclaration/library/kotlinxdatetimefun.localdatetime.extensions/to-local-date.html
-$dokka.location:kotlinxdatetimefun.localdatetime.extensions//toLocalDatetime/kotlin.String#kotlin.String?/PointingToDeclaration/library/kotlinxdatetimefun.localdatetime.extensions/to-local-datetime.html
+$dokka.location:kotlinxdatetimefun.localdatetime.extensions//toLocalDatetime/kotlin.String#vararg(kotlin.String?)/PointingToDeclaration/library/kotlinxdatetimefun.localdatetime.extensions/to-local-datetime.html
 $dokka.location:kotlinxdatetimefun.localdatetime.extensions//toLocalTime/kotlinx.datetime.LocalDateTime#/PointingToDeclaration/library/kotlinxdatetimefun.localdatetime.extensions/to-local-time.html
 $dokka.location:kotlinxdatetimefun.localdatetime.extensions//withDay/kotlinx.datetime.LocalDateTime#kotlin.Int/PointingToDeclaration/library/kotlinxdatetimefun.localdatetime.extensions/with-day.html
 $dokka.location:kotlinxdatetimefun.localdatetime.extensions//withHour/kotlinx.datetime.LocalDateTime#kotlin.Int/PointingToDeclaration/library/kotlinxdatetimefun.localdatetime.extensions/with-hour.html
@@ -187,7 +187,7 @@ $dokka.location:kotlinxdatetimefun.localtime.extensions//plusMinutes/kotlinx.dat
 $dokka.location:kotlinxdatetimefun.localtime.extensions//plusNanoseconds/kotlinx.datetime.LocalTime#kotlin.Long/PointingToDeclaration/library/kotlinxdatetimefun.localtime.extensions/plus-nanoseconds.html
 $dokka.location:kotlinxdatetimefun.localtime.extensions//plusSeconds/kotlinx.datetime.LocalTime#kotlin.Int/PointingToDeclaration/library/kotlinxdatetimefun.localtime.extensions/plus-seconds.html
 $dokka.location:kotlinxdatetimefun.localtime.extensions//print/kotlinx.datetime.LocalTime#kotlin.String/PointingToDeclaration/library/kotlinxdatetimefun.localtime.extensions/print.html
-$dokka.location:kotlinxdatetimefun.localtime.extensions//toLocaltime/kotlin.String#kotlin.String?/PointingToDeclaration/library/kotlinxdatetimefun.localtime.extensions/to-localtime.html
+$dokka.location:kotlinxdatetimefun.localtime.extensions//toLocaltime/kotlin.String#vararg(kotlin.String?)/PointingToDeclaration/library/kotlinxdatetimefun.localtime.extensions/to-localtime.html
 $dokka.location:kotlinxdatetimefun.localtime.extensions//withHour/kotlinx.datetime.LocalTime#kotlin.Int/PointingToDeclaration/library/kotlinxdatetimefun.localtime.extensions/with-hour.html
 $dokka.location:kotlinxdatetimefun.localtime.extensions//withMinute/kotlinx.datetime.LocalTime#kotlin.Int/PointingToDeclaration/library/kotlinxdatetimefun.localtime.extensions/with-minute.html
 $dokka.location:kotlinxdatetimefun.localtime.extensions//withNanosecond/kotlinx.datetime.LocalTime#kotlin.Int/PointingToDeclaration/library/kotlinxdatetimefun.localtime.extensions/with-nanosecond.html
