@@ -28,7 +28,7 @@
 ```
 
 ## Platforms
-JVM · Android · iOS · JS (browser & Node.js)
+JVM · Android · iOS · JS (browser & Node.js) · WASM (browser & Node.js)
 
 ## Features
 ### Parsing
