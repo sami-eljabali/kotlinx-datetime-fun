@@ -11,14 +11,21 @@ import kotlinx.datetime.plus
 import kotlinxdatetimefun.localtime.MAX
 import kotlinxdatetimefun.localtime.MIN
 
-fun LocalDate.minusDays(days: Int): LocalDate = this.minus(period = DatePeriod(days = days))
-fun LocalDate.plusDays(days: Int): LocalDate = this.plus(period = DatePeriod(days = days))
-
-fun LocalDate.minusMonths(months: Int): LocalDate = this.minus(period = DatePeriod(months = months))
-fun LocalDate.plusMonths(months: Int): LocalDate = this.plus(period = DatePeriod(months = months))
+fun LocalDate.plusYears(years: Int): LocalDate = this.plus(period = DatePeriod(years = years))
 
 fun LocalDate.minusYears(years: Int): LocalDate = this.minus(period = DatePeriod(years = years))
-fun LocalDate.plusYears(years: Int): LocalDate = this.plus(period = DatePeriod(years = years))
+
+fun LocalDate.plusMonths(months: Int): LocalDate = this.plus(period = DatePeriod(months = months))
+
+fun LocalDate.minusMonths(months: Int): LocalDate = this.minus(period = DatePeriod(months = months))
+
+fun LocalDate.plusWeeks(weeks: Int): LocalDate = this.plus(period = DatePeriod(days = weeks * 7))
+
+fun LocalDate.minusWeeks(weeks: Int): LocalDate = this.minus(period = DatePeriod(days = weeks * 7))
+
+fun LocalDate.plusDays(days: Int): LocalDate = this.plus(period = DatePeriod(days = days))
+
+fun LocalDate.minusDays(days: Int): LocalDate = this.minus(period = DatePeriod(days = days))
 
 fun LocalDate.getLast(dayOfWeek: DayOfWeek, countingInThisDay: Boolean = false): LocalDate {
     if (countingInThisDay && this.dayOfWeek == dayOfWeek) {
