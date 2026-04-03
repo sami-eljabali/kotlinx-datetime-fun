@@ -23,6 +23,15 @@ import kotlinxdatetimefun.localdatetime.extensions.plusSeconds
 import kotlinxdatetimefun.localdatetime.extensions.toLocalDate
 import kotlinxdatetimefun.localdatetime.extensions.toLocalTime
 import kotlinxdatetimefun.localdatetime.extensions.withLocalTime
+import kotlinxdatetimefun.localdatetime.extensions.minusWeeks
+import kotlinxdatetimefun.localdatetime.extensions.plusWeeks
+import kotlinxdatetimefun.localdatetime.extensions.withDay
+import kotlinxdatetimefun.localdatetime.extensions.withHour
+import kotlinxdatetimefun.localdatetime.extensions.withMinute
+import kotlinxdatetimefun.localdatetime.extensions.withMonth
+import kotlinxdatetimefun.localdatetime.extensions.withNanosecond
+import kotlinxdatetimefun.localdatetime.extensions.withSecond
+import kotlinxdatetimefun.localdatetime.extensions.withYear
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
@@ -85,6 +94,28 @@ class LocalDateTimeMutatingExtensionsTest {
         assertEquals(testDateTime.year, result.year)
         assertEquals(testDateTime.month.number, result.month.number)
         assertEquals(testDateTime.day, result.day)
+    }
+
+    @Test
+    fun `withMonth should change month and adjust day accordingly`() {
+        val dateTime = LocalDateTime(year = 2026,
+            month = 3,
+            day = 31,
+            hour = 12,
+            minute = 30,
+            second = 45,
+            nanosecond = 123_456_789
+        )
+        val monthOfFebruary = 2
+        val daysOfFebruary2026 = 28
+        val result = dateTime.withMonth(monthOfFebruary)
+        assertEquals(dateTime.year, result.year)
+        assertEquals(monthOfFebruary, result.month.number)
+        assertEquals(daysOfFebruary2026, result.day)
+        assertEquals(dateTime.hour, result.hour)
+        assertEquals(dateTime.minute, result.minute)
+        assertEquals(dateTime.second, result.second)
+        assertEquals(dateTime.nanosecond, result.nanosecond)
     }
 
     @Test
@@ -279,5 +310,194 @@ class LocalDateTimeMutatingExtensionsTest {
         assertEquals(6, result.month.number)
         assertEquals(15, result.day)
         assertEquals(16, result.hour)
+    }
+
+    // withYear tests
+
+    @Test
+    fun `withYear should change year and preserve all other fields`() {
+        val result = testDateTime.withYear(2025)
+        assertEquals(2025, result.year)
+        assertEquals(testDateTime.month.number, result.month.number)
+        assertEquals(testDateTime.day, result.day)
+        assertEquals(testDateTime.hour, result.hour)
+        assertEquals(testDateTime.minute, result.minute)
+        assertEquals(testDateTime.second, result.second)
+        assertEquals(testDateTime.nanosecond, result.nanosecond)
+    }
+
+    @Test
+    fun `withYear should handle leap year correctly`() {
+        val leapDay = LocalDateTime(2024, 2, 29, 10, 0, 0)
+        val result = leapDay.withYear(2020) // 2020 is also a leap year
+        assertEquals(2020, result.year)
+        assertEquals(2, result.month.number)
+        assertEquals(29, result.day)
+    }
+
+    // withDay tests
+
+    @Test
+    fun `withDay should change day and preserve all other fields`() {
+        val result = testDateTime.withDay(1)
+        assertEquals(testDateTime.year, result.year)
+        assertEquals(testDateTime.month.number, result.month.number)
+        assertEquals(1, result.day)
+        assertEquals(testDateTime.hour, result.hour)
+        assertEquals(testDateTime.minute, result.minute)
+        assertEquals(testDateTime.second, result.second)
+        assertEquals(testDateTime.nanosecond, result.nanosecond)
+    }
+
+    @Test
+    fun `withDay should change to last day of month`() {
+        val result = testDateTime.withDay(30) // June has 30 days
+        assertEquals(30, result.day)
+        assertEquals(testDateTime.month.number, result.month.number)
+    }
+
+    // withHour tests
+
+    @Test
+    fun `withHour should change hour and preserve all other fields`() {
+        val result = testDateTime.withHour(8)
+        assertEquals(testDateTime.year, result.year)
+        assertEquals(testDateTime.month.number, result.month.number)
+        assertEquals(testDateTime.day, result.day)
+        assertEquals(8, result.hour)
+        assertEquals(testDateTime.minute, result.minute)
+        assertEquals(testDateTime.second, result.second)
+        assertEquals(testDateTime.nanosecond, result.nanosecond)
+    }
+
+    @Test
+    fun `withHour should handle midnight boundary`() {
+        val result = testDateTime.withHour(0)
+        assertEquals(0, result.hour)
+        assertEquals(testDateTime.minute, result.minute)
+    }
+
+    @Test
+    fun `withHour should handle end of day boundary`() {
+        val result = testDateTime.withHour(23)
+        assertEquals(23, result.hour)
+        assertEquals(testDateTime.minute, result.minute)
+    }
+
+    // withMinute tests
+
+    @Test
+    fun `withMinute should change minute and preserve all other fields`() {
+        val result = testDateTime.withMinute(0)
+        assertEquals(testDateTime.year, result.year)
+        assertEquals(testDateTime.month.number, result.month.number)
+        assertEquals(testDateTime.day, result.day)
+        assertEquals(testDateTime.hour, result.hour)
+        assertEquals(0, result.minute)
+        assertEquals(testDateTime.second, result.second)
+        assertEquals(testDateTime.nanosecond, result.nanosecond)
+    }
+
+    @Test
+    fun `withMinute should handle end of hour boundary`() {
+        val result = testDateTime.withMinute(59)
+        assertEquals(59, result.minute)
+        assertEquals(testDateTime.hour, result.hour)
+        assertEquals(testDateTime.second, result.second)
+    }
+
+    // withSecond tests
+
+    @Test
+    fun `withSecond should change second and preserve all other fields`() {
+        val result = testDateTime.withSecond(0)
+        assertEquals(testDateTime.year, result.year)
+        assertEquals(testDateTime.month.number, result.month.number)
+        assertEquals(testDateTime.day, result.day)
+        assertEquals(testDateTime.hour, result.hour)
+        assertEquals(testDateTime.minute, result.minute)
+        assertEquals(0, result.second)
+        assertEquals(testDateTime.nanosecond, result.nanosecond)
+    }
+
+    @Test
+    fun `withSecond should handle end of minute boundary`() {
+        val result = testDateTime.withSecond(59)
+        assertEquals(59, result.second)
+        assertEquals(testDateTime.minute, result.minute)
+        assertEquals(testDateTime.nanosecond, result.nanosecond)
+    }
+
+    // withNanosecond tests
+
+    @Test
+    fun `withNanosecond should change nanosecond and preserve all other fields`() {
+        val result = testDateTime.withNanosecond(0)
+        assertEquals(testDateTime.year, result.year)
+        assertEquals(testDateTime.month.number, result.month.number)
+        assertEquals(testDateTime.day, result.day)
+        assertEquals(testDateTime.hour, result.hour)
+        assertEquals(testDateTime.minute, result.minute)
+        assertEquals(testDateTime.second, result.second)
+        assertEquals(0, result.nanosecond)
+    }
+
+    @Test
+    fun `withNanosecond should handle max nanosecond value`() {
+        val result = testDateTime.withNanosecond(999_999_999)
+        assertEquals(999_999_999, result.nanosecond)
+        assertEquals(testDateTime.second, result.second)
+    }
+
+    // plusWeeks tests
+
+    @Test
+    fun `plusWeeks should correctly add weeks`() {
+        val result = testDateTime.plusWeeks(2, testTimeZone)
+        assertEquals(2023, result.year)
+        assertEquals(6, result.month.number)
+        assertEquals(29, result.day)
+        assertEquals(testDateTime.hour, result.hour)
+        assertEquals(testDateTime.minute, result.minute)
+    }
+
+    @Test
+    fun `plusWeeks should cross month boundary correctly`() {
+        val result = testDateTime.plusWeeks(3, testTimeZone) // June 15 + 21 days = July 6
+        assertEquals(2023, result.year)
+        assertEquals(7, result.month.number)
+        assertEquals(6, result.day)
+    }
+
+    @Test
+    fun `plusWeeks with zero should return same datetime`() {
+        val result = testDateTime.plusWeeks(0, testTimeZone)
+        assertEquals(testDateTime, result)
+    }
+
+    // minusWeeks tests
+
+    @Test
+    fun `minusWeeks should correctly subtract weeks`() {
+        val result = testDateTime.minusWeeks(2, testTimeZone)
+        assertEquals(2023, result.year)
+        assertEquals(6, result.month.number)
+        assertEquals(1, result.day)
+        assertEquals(testDateTime.hour, result.hour)
+        assertEquals(testDateTime.minute, result.minute)
+    }
+
+    @Test
+    fun `minusWeeks should cross month boundary correctly`() {
+        val result = testDateTime.minusWeeks(3, testTimeZone) // June 15 - 21 days = May 25
+        assertEquals(2023, result.year)
+        assertEquals(5, result.month.number)
+        assertEquals(25, result.day)
+    }
+
+    @Test
+    fun `minusWeeks with zero should return same datetime`() {
+        val result = testDateTime.minusWeeks(0, testTimeZone)
+        assertEquals(testDateTime, result)
     }
 }
