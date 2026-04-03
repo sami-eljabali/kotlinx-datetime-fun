@@ -19,6 +19,10 @@ kotlin {
         nodejs()
         generateTypeScriptDefinitions()
     }
+    wasmJs {
+        browser()
+        nodejs()
+    }
 
     sourceSets {
         commonMain.dependencies {
