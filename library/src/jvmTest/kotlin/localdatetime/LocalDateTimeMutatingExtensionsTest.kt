@@ -23,6 +23,7 @@ import kotlinxdatetimefun.localdatetime.extensions.plusSeconds
 import kotlinxdatetimefun.localdatetime.extensions.toLocalDate
 import kotlinxdatetimefun.localdatetime.extensions.toLocalTime
 import kotlinxdatetimefun.localdatetime.extensions.withLocalTime
+import kotlinxdatetimefun.localdatetime.extensions.withMonth
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
@@ -85,6 +86,28 @@ class LocalDateTimeMutatingExtensionsTest {
         assertEquals(testDateTime.year, result.year)
         assertEquals(testDateTime.month.number, result.month.number)
         assertEquals(testDateTime.day, result.day)
+    }
+
+    @Test
+    fun `withMonth should change month and adjust day accordingly`() {
+        val dateTime = LocalDateTime(year = 2026,
+            month = 3,
+            day = 31,
+            hour = 12,
+            minute = 30,
+            second = 45,
+            nanosecond = 123_456_789
+        )
+        val monthOfFebruary = 2
+        val daysOfFebruary2026 = 28
+        val result = dateTime.withMonth(monthOfFebruary)
+        assertEquals(dateTime.year, result.year)
+        assertEquals(monthOfFebruary, result.month.number)
+        assertEquals(daysOfFebruary2026, result.day)
+        assertEquals(dateTime.hour, result.hour)
+        assertEquals(dateTime.minute, result.minute)
+        assertEquals(dateTime.second, result.second)
+        assertEquals(dateTime.nanosecond, result.nanosecond)
     }
 
     @Test
