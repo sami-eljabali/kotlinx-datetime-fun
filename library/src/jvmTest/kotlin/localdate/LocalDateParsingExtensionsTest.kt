@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Assertions.assertNull
 import org.junit.jupiter.api.Test
 
 class LocalDateParsingExtensionsTest {
-
     @Test
     fun `toLocaldate returns LocalDate for valid ISO date string when no format is provided`() {
         // Given a valid ISO date string

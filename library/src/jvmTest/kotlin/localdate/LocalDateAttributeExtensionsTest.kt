@@ -10,7 +10,6 @@ import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
 class LocalDateAttributeExtensionsTest {
-
     @Test
     fun `isInLeapYear returns true for leap year and false for non-leap year`() {
         // Leap year example: 2020 is a leap year.

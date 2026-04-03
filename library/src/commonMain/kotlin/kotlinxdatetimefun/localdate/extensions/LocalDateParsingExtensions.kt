@@ -16,22 +16,24 @@ import kotlinx.datetime.format.byUnicodePattern
 fun String.toLocaldate(vararg formats: String?): LocalDate? {
     val parsingAttempts = if (formats.isEmpty()) listOf<String?>(null) else formats.asList()
     for (format in parsingAttempts) {
-        val parsedDate = if (format.isNullOrBlank()) {
-            try {
-                LocalDate.parse(this)
-            } catch (e: IllegalArgumentException) {
-                null
-            }
-        } else {
-            try {
-                val localDateFormat = LocalDate.Format {
-                    byUnicodePattern(format)
+        val parsedDate =
+            if (format.isNullOrBlank()) {
+                try {
+                    LocalDate.parse(this)
+                } catch (e: IllegalArgumentException) {
+                    null
                 }
-                LocalDate.parse(this, localDateFormat)
-            } catch (e: IllegalArgumentException) {
-                null
+            } else {
+                try {
+                    val localDateFormat =
+                        LocalDate.Format {
+                            byUnicodePattern(format)
+                        }
+                    LocalDate.parse(this, localDateFormat)
+                } catch (e: IllegalArgumentException) {
+                    null
+                }
             }
-        }
         if (parsedDate != null) return parsedDate
     }
     return null

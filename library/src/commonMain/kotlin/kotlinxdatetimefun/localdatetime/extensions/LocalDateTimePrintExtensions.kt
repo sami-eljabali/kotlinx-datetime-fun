@@ -6,8 +6,9 @@ import kotlinx.datetime.format.byUnicodePattern
 
 @OptIn(FormatStringsInDatetimeFormats::class)
 fun LocalDateTime.print(format: String): String {
-    val dateFormat = LocalDateTime.Format {
-        byUnicodePattern(format)
-    }
+    val dateFormat =
+        LocalDateTime.Format {
+            byUnicodePattern(format)
+        }
     return dateFormat.format(this)
 }

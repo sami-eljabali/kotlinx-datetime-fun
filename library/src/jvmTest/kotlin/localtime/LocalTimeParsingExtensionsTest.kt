@@ -10,7 +10,6 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
 
 class LocalTimeParsingExtensionsTest {
-
     private val testTime = LocalTime(14, 5, 9, 123_000_000) // 14:05:09.123
 
     @Test

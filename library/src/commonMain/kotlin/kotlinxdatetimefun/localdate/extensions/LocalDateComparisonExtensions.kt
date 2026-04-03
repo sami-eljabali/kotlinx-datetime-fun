@@ -46,8 +46,7 @@ fun LocalDate.isBeforeEqualMonth(localDateB: LocalDate): Boolean {
     return this.month <= localDateB.month
 }
 
-fun LocalDate.isEqualMonth(localDateB: LocalDate): Boolean =
-    this.year == localDateB.year && this.month == localDateB.month
+fun LocalDate.isEqualMonth(localDateB: LocalDate): Boolean = this.year == localDateB.year && this.month == localDateB.month
 
 fun LocalDate.isAfterEqualMonth(localDateB: LocalDate): Boolean {
     if (this.year > localDateB.year) return true
@@ -76,23 +75,16 @@ fun LocalDate.isAfterEqualYear(localDateB: LocalDate): Boolean = this.year >= lo
 fun LocalDate.isAfterYear(localDateB: LocalDate): Boolean = this.year > localDateB.year
 // endregion
 
-fun LocalDate.getMilliSecondDifference(localDateB: LocalDate): Long =
-    this.getSecondDifference(localDateB).toLong() * 1_000
+fun LocalDate.getMilliSecondDifference(localDateB: LocalDate): Long = this.getSecondDifference(localDateB).toLong() * 1_000
 
-fun LocalDate.getSecondDifference(localDateB: LocalDate): Int =
-    this.getMinuteDifference(localDateB) * 60
+fun LocalDate.getSecondDifference(localDateB: LocalDate): Int = this.getMinuteDifference(localDateB) * 60
 
-fun LocalDate.getMinuteDifference(localDateB: LocalDate): Int =
-    this.getHourDifference(localDateB) * 60
+fun LocalDate.getMinuteDifference(localDateB: LocalDate): Int = this.getHourDifference(localDateB) * 60
 
-fun LocalDate.getHourDifference(localDateB: LocalDate): Int =
-    this.daysUntil(localDateB) * 24
+fun LocalDate.getHourDifference(localDateB: LocalDate): Int = this.daysUntil(localDateB) * 24
 
-fun LocalDate.getDayDifference(localDateB: LocalDate): Int =
-    this.daysUntil(localDateB)
+fun LocalDate.getDayDifference(localDateB: LocalDate): Int = this.daysUntil(localDateB)
 
-fun LocalDate.getMonthDifference(localDateB: LocalDate): Int =
-    this.monthsUntil(localDateB)
+fun LocalDate.getMonthDifference(localDateB: LocalDate): Int = this.monthsUntil(localDateB)
 
-fun LocalDate.getYearDifference(localDateB: LocalDate): Int =
-    this.yearsUntil(localDateB)
+fun LocalDate.getYearDifference(localDateB: LocalDate): Int = this.yearsUntil(localDateB)
