@@ -8,7 +8,6 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
 
 class LocalDateTimePrintExtensionsTest {
-
     private val testDateTime = LocalDateTime(2024, 4, 13, 15, 45, 30)
 
     @Test

@@ -13,20 +13,22 @@ fun LocalDateTime.Companion.of(
     hour: Int = 0,
     minute: Int = 0,
     second: Int = 0,
-    nanosecond: Int = 0
-): LocalDateTime = LocalDateTime(
-    year = year,
-    month = Month(month),
-    day = day,
-    hour = hour,
-    minute = minute,
-    second = second,
-    nanosecond = nanosecond
-)
+    nanosecond: Int = 0,
+): LocalDateTime =
+    LocalDateTime(
+        year = year,
+        month = Month(month),
+        day = day,
+        hour = hour,
+        minute = minute,
+        second = second,
+        nanosecond = nanosecond,
+    )
 
 fun LocalDateTime.Companion.of(
     epochMilliseconds: Long,
-    timeZone: TimeZone = TimeZone.currentSystemDefault()
+    timeZone: TimeZone = TimeZone.currentSystemDefault(),
 ): LocalDateTime =
-    Instant.fromEpochMilliseconds(epochMilliseconds)
+    Instant
+        .fromEpochMilliseconds(epochMilliseconds)
         .toLocalDateTime(timeZone)

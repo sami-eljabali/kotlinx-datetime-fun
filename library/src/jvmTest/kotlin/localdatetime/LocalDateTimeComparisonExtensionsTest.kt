@@ -10,29 +10,32 @@ import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
 class LocalDateTimeComparisonExtensionsTest {
-
     @Test
     fun `given 2 dateTimes 1hr and 10m apart, then should see such differences in comparing`() {
         // given
         // 2021-06-08 3:30 PM
-        val dateA = LocalDateTime(year = 2021,
-            month = 6,
-            day = 8,
-            hour = 15,
-            minute = 30,
-            second = 0,
-            nanosecond = 0
-        )
+        val dateA =
+            LocalDateTime(
+                year = 2021,
+                month = 6,
+                day = 8,
+                hour = 15,
+                minute = 30,
+                second = 0,
+                nanosecond = 0,
+            )
 
         // 2021-06-08 4:40 PM
-        val dateB = LocalDateTime(year = 2021,
-            month = 6,
-            day = 8,
-            hour = 16,
-            minute = 40,
-            second = 0,
-            nanosecond = 0
-        )
+        val dateB =
+            LocalDateTime(
+                year = 2021,
+                month = 6,
+                day = 8,
+                hour = 16,
+                minute = 40,
+                second = 0,
+                nanosecond = 0,
+            )
 
         // when
         val actualYearsDifference = dateA.getYearDifference(dateB)
@@ -53,24 +56,28 @@ class LocalDateTimeComparisonExtensionsTest {
     fun `given 2 dateTimes 3 years apart, then should see such differences in comparing`() {
         // given
         // 2021-06-08 3:30 PM
-        val dateA = LocalDateTime(year = 2021,
-            month = 6,
-            day = 8,
-            hour = 15,
-            minute = 30,
-            second = 0,
-            nanosecond = 0
-        )
+        val dateA =
+            LocalDateTime(
+                year = 2021,
+                month = 6,
+                day = 8,
+                hour = 15,
+                minute = 30,
+                second = 0,
+                nanosecond = 0,
+            )
 
         // 2024-06-08 3:30 PM
-        val dateB = LocalDateTime(year = 2024,
-            month = 6,
-            day = 8,
-            hour = 15,
-            minute = 30,
-            second = 0,
-            nanosecond = 0
-        )
+        val dateB =
+            LocalDateTime(
+                year = 2024,
+                month = 6,
+                day = 8,
+                hour = 15,
+                minute = 30,
+                second = 0,
+                nanosecond = 0,
+            )
 
         // when
         val actualYearsDifference = dateA.getYearDifference(dateB)

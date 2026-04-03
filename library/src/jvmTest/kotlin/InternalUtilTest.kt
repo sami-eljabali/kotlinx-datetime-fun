@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
 class InternalUtilTest {
-
     @Test
     fun `years divisible by 4 but not 100 are leap years`() {
         assertTrue(isLeapYear(2024))
@@ -35,10 +34,10 @@ class InternalUtilTest {
 
     @Test
     fun `test negative and zero years`() {
-        assertTrue(isLeapYear(0))        // 0 is divisible by 400
-        assertFalse(isLeapYear(-1))      // Not divisible by 4
-        assertTrue(isLeapYear(-4))       // Leap year
-        assertFalse(isLeapYear(-100))    // Not leap year
-        assertTrue(isLeapYear(-400))     // Leap year
+        assertTrue(isLeapYear(0)) // 0 is divisible by 400
+        assertFalse(isLeapYear(-1)) // Not divisible by 4
+        assertTrue(isLeapYear(-4)) // Leap year
+        assertFalse(isLeapYear(-100)) // Not leap year
+        assertTrue(isLeapYear(-400)) // Leap year
     }
 }

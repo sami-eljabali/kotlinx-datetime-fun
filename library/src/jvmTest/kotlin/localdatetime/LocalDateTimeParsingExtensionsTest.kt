@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 
 class LocalDateTimeParsingExtensionsTest {
-
     companion object {
         private const val ISO_8601 = "yyyy-MM-dd'T'HH:mm:ss'Z'"
         private const val ISO_8601_S = "yyyy-MM-dd'T'HH:mm:ss.S'Z'"
@@ -73,7 +72,6 @@ class LocalDateTimeParsingExtensionsTest {
         val result = input.toLocalDatetime()
         assertNull(result)
     }
-
 
     @Test
     fun `given date in ISO_8601, when parsed without format & converted to date, then should match when printed back to text`() {

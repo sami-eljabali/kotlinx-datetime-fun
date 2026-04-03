@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
 class LocalDatePrintExtensionsTest {
-
     @Test
     fun `print formats date using dd slash MM slash yyyy pattern`() {
         // given

@@ -22,19 +22,23 @@ fun String.toLocalDatetime(vararg formats: String?): LocalDateTime? {
     return parseLocalDateTimeHelper(this, flexibleIso8601Format)
 }
 
-private fun parseLocalDateTimeHelper(dateText: String, format: String?): LocalDateTime? =
-    if (format.isNullOrEmpty())
+private fun parseLocalDateTimeHelper(
+    dateText: String,
+    format: String?,
+): LocalDateTime? =
+    if (format.isNullOrEmpty()) {
         try {
             LocalDateTime.parse(dateText)
         } catch (e: IllegalArgumentException) {
             null
         }
-    else {
+    } else {
         try {
             @OptIn(FormatStringsInDatetimeFormats::class)
-            val dateTimeFormat = LocalDateTime.Format {
-                byUnicodePattern(format)
-            }
+            val dateTimeFormat =
+                LocalDateTime.Format {
+                    byUnicodePattern(format)
+                }
             dateTimeFormat.parse(dateText)
         } catch (e: IllegalArgumentException) {
             null

@@ -16,17 +16,17 @@ import kotlinxdatetimefun.localdatetime.extensions.minusDays
 import kotlinxdatetimefun.localdatetime.extensions.minusHours
 import kotlinxdatetimefun.localdatetime.extensions.minusMinutes
 import kotlinxdatetimefun.localdatetime.extensions.minusSeconds
+import kotlinxdatetimefun.localdatetime.extensions.minusWeeks
 import kotlinxdatetimefun.localdatetime.extensions.plusDays
 import kotlinxdatetimefun.localdatetime.extensions.plusHours
 import kotlinxdatetimefun.localdatetime.extensions.plusMinutes
 import kotlinxdatetimefun.localdatetime.extensions.plusSeconds
+import kotlinxdatetimefun.localdatetime.extensions.plusWeeks
 import kotlinxdatetimefun.localdatetime.extensions.toLocalDate
 import kotlinxdatetimefun.localdatetime.extensions.toLocalTime
-import kotlinxdatetimefun.localdatetime.extensions.withLocalTime
-import kotlinxdatetimefun.localdatetime.extensions.minusWeeks
-import kotlinxdatetimefun.localdatetime.extensions.plusWeeks
 import kotlinxdatetimefun.localdatetime.extensions.withDay
 import kotlinxdatetimefun.localdatetime.extensions.withHour
+import kotlinxdatetimefun.localdatetime.extensions.withLocalTime
 import kotlinxdatetimefun.localdatetime.extensions.withMinute
 import kotlinxdatetimefun.localdatetime.extensions.withMonth
 import kotlinxdatetimefun.localdatetime.extensions.withNanosecond
@@ -36,23 +36,24 @@ import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
 class LocalDateTimeMutatingExtensionsTest {
-
     // Test data
     private val testDateTime =
-        LocalDateTime(year = 2023,
+        LocalDateTime(
+            year = 2023,
             month = 6,
             day = 15,
             hour = 12,
             minute = 30,
             second = 45,
-            nanosecond = 123_456_789
+            nanosecond = 123_456_789,
         )
-    private val testTime = LocalTime(
-        hour = 8,
-        minute = 15,
-        second = 30,
-        nanosecond = 500_000_000
-    )
+    private val testTime =
+        LocalTime(
+            hour = 8,
+            minute = 15,
+            second = 30,
+            nanosecond = 500_000_000,
+        )
     private val testTimeZone = TimeZone.of("UTC")
 
     @Test
@@ -98,14 +99,16 @@ class LocalDateTimeMutatingExtensionsTest {
 
     @Test
     fun `withMonth should change month and adjust day accordingly`() {
-        val dateTime = LocalDateTime(year = 2026,
-            month = 3,
-            day = 31,
-            hour = 12,
-            minute = 30,
-            second = 45,
-            nanosecond = 123_456_789
-        )
+        val dateTime =
+            LocalDateTime(
+                year = 2026,
+                month = 3,
+                day = 31,
+                hour = 12,
+                minute = 30,
+                second = 45,
+                nanosecond = 123_456_789,
+            )
         val monthOfFebruary = 2
         val daysOfFebruary2026 = 28
         val result = dateTime.withMonth(monthOfFebruary)

@@ -32,22 +32,24 @@ import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
 class LocalDateComparisonExtensionsTest {
-
     @Test
     fun `given 2 dates 0 days apart, then should see such differences in comparing`() {
         // given
         // 2021-06-08
-        val dateA = LocalDate(year = 2021,
-            month = 6,
-            day = 8
-        )
+        val dateA =
+            LocalDate(
+                year = 2021,
+                month = 6,
+                day = 8,
+            )
 
         // 2021-06-08
-        val dateB = LocalDate(
-            year = 2021,
-            month = 6,
-            day = 8,
-        )
+        val dateB =
+            LocalDate(
+                year = 2021,
+                month = 6,
+                day = 8,
+            )
 
         // when
         val actualYearsDifference = dateA.getYearDifference(dateB)
@@ -99,17 +101,20 @@ class LocalDateComparisonExtensionsTest {
     fun `given 2 dateTimes 3 years apart, then should see such differences in comparing`() {
         // given
         // 2021-06-08
-        val dateA = LocalDate(year = 2021,
-            month = 6,
-            day = 8
-        )
+        val dateA =
+            LocalDate(
+                year = 2021,
+                month = 6,
+                day = 8,
+            )
 
         // 2024-06-08
-        val dateB = LocalDate(
-            year = 2024,
-            month = 6,
-            day = 8,
-        )
+        val dateB =
+            LocalDate(
+                year = 2024,
+                month = 6,
+                day = 8,
+            )
 
         // when
         val actualYearsDifference = dateA.getYearDifference(dateB)
@@ -158,16 +163,20 @@ class LocalDateComparisonExtensionsTest {
     fun `given dateA after dateB with differing months and days, then should see correct differences and comparisons`() {
         // given
         // 2024-08-10
-        val dateA = LocalDate(year = 2024,
-            month = 8,
-            day = 10
-        )
+        val dateA =
+            LocalDate(
+                year = 2024,
+                month = 8,
+                day = 10,
+            )
 
         // 2021-03-05
-        val dateB = LocalDate(year = 2021,
-            month = 3,
-            day = 5
-        )
+        val dateB =
+            LocalDate(
+                year = 2021,
+                month = 3,
+                day = 5,
+            )
 
         // when
         val actualYearsDifference = dateA.getYearDifference(dateB)

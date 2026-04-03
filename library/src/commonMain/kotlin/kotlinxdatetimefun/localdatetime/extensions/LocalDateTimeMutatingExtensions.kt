@@ -18,107 +18,146 @@ import kotlin.time.Duration.Companion.minutes
 import kotlin.time.Duration.Companion.seconds
 import kotlin.time.times
 
-fun LocalDateTime.toLocalDate(): LocalDate = LocalDate(
-    year = this.year,
-    month = month,
-    day = day
-)
+fun LocalDateTime.toLocalDate(): LocalDate =
+    LocalDate(
+        year = this.year,
+        month = month,
+        day = day,
+    )
 
-fun LocalDateTime.toLocalTime(): LocalTime = LocalTime(
-    hour = this.hour,
-    minute = this.minute,
-    second = this.second,
-    nanosecond = this.nanosecond
-)
+fun LocalDateTime.toLocalTime(): LocalTime =
+    LocalTime(
+        hour = this.hour,
+        minute = this.minute,
+        second = this.second,
+        nanosecond = this.nanosecond,
+    )
 
-fun LocalDateTime.atStartOfDay(): LocalDateTime = LocalDateTime(
-    year = this.year,
-    month = month,
-    day = day,
-    hour = 0,
-    minute = 0,
-    second = 0,
-    nanosecond = 0
-)
+fun LocalDateTime.atStartOfDay(): LocalDateTime =
+    LocalDateTime(
+        year = this.year,
+        month = month,
+        day = day,
+        hour = 0,
+        minute = 0,
+        second = 0,
+        nanosecond = 0,
+    )
 
-fun LocalDateTime.atEndOfDay(): LocalDateTime = LocalDateTime(
-    year = this.year,
-    month = month,
-    day = day,
-    hour = 23,
-    minute = 59,
-    second = 59,
-    nanosecond = 999_999_999
-)
+fun LocalDateTime.atEndOfDay(): LocalDateTime =
+    LocalDateTime(
+        year = this.year,
+        month = month,
+        day = day,
+        hour = 23,
+        minute = 59,
+        second = 59,
+        nanosecond = 999_999_999,
+    )
 
-fun LocalDateTime.atStartOfMonth(): LocalDateTime =
-    LocalDateTime(this.toLocalDate().atStartOfMonth(), LocalTime(0, 0, 0, 0))
+fun LocalDateTime.atStartOfMonth(): LocalDateTime = LocalDateTime(this.toLocalDate().atStartOfMonth(), LocalTime(0, 0, 0, 0))
 
-fun LocalDateTime.atEndOfMonth(): LocalDateTime =
-    LocalDateTime(this.toLocalDate().atEndOfMonth(), LocalTime(23, 59, 59, 999_999_999))
+fun LocalDateTime.atEndOfMonth(): LocalDateTime = LocalDateTime(this.toLocalDate().atEndOfMonth(), LocalTime(23, 59, 59, 999_999_999))
 
-fun LocalDateTime.withLocalTime(localTime: LocalTime): LocalDateTime = LocalDateTime(
-    year = this.year,
-    month = month,
-    day = day,
-    hour = localTime.hour,
-    minute = localTime.minute,
-    second = localTime.second,
-    nanosecond = localTime.nanosecond
-)
+fun LocalDateTime.withLocalTime(localTime: LocalTime): LocalDateTime =
+    LocalDateTime(
+        year = this.year,
+        month = month,
+        day = day,
+        hour = localTime.hour,
+        minute = localTime.minute,
+        second = localTime.second,
+        nanosecond = localTime.nanosecond,
+    )
 
 fun LocalDateTime.withYear(year: Int): LocalDateTime = LocalDateTime(this.toLocalDate().withYear(year), this.toLocalTime())
+
 fun LocalDateTime.withMonth(month: Int): LocalDateTime = LocalDateTime(this.toLocalDate().withMonth(month), this.toLocalTime())
+
 fun LocalDateTime.withDay(day: Int): LocalDateTime = LocalDateTime(this.toLocalDate().withDay(day), this.toLocalTime())
+
 fun LocalDateTime.withHour(hour: Int): LocalDateTime = withLocalTime(LocalTime(hour, minute, second, nanosecond))
+
 fun LocalDateTime.withMinute(minute: Int): LocalDateTime = withLocalTime(LocalTime(hour, minute, second, nanosecond))
+
 fun LocalDateTime.withSecond(second: Int): LocalDateTime = withLocalTime(LocalTime(hour, minute, second, nanosecond))
+
 fun LocalDateTime.withNanosecond(nanosecond: Int): LocalDateTime = withLocalTime(LocalTime(hour, minute, second, nanosecond))
 
-fun LocalDateTime.plusWeeks(weeks: Int, timeZone: TimeZone = TimeZone.currentSystemDefault()): LocalDateTime =
-    this.toInstant(timeZone)
+fun LocalDateTime.plusWeeks(
+    weeks: Int,
+    timeZone: TimeZone = TimeZone.currentSystemDefault(),
+): LocalDateTime =
+    this
+        .toInstant(timeZone)
         .plus(7 * weeks.days)
         .toLocalDateTime(timeZone)
 
-fun LocalDateTime.minusWeeks(weeks: Int, timeZone: TimeZone = TimeZone.currentSystemDefault()): LocalDateTime =
-    this.plusWeeks(-weeks, timeZone)
+fun LocalDateTime.minusWeeks(
+    weeks: Int,
+    timeZone: TimeZone = TimeZone.currentSystemDefault(),
+): LocalDateTime = this.plusWeeks(-weeks, timeZone)
 
-fun LocalDateTime.plusDays(days: Int, timeZone: TimeZone = TimeZone.currentSystemDefault()): LocalDateTime =
-    this.toInstant(timeZone)
+fun LocalDateTime.plusDays(
+    days: Int,
+    timeZone: TimeZone = TimeZone.currentSystemDefault(),
+): LocalDateTime =
+    this
+        .toInstant(timeZone)
         .plus(days.days)
         .toLocalDateTime(timeZone)
 
-fun LocalDateTime.minusDays(days: Int, timeZone: TimeZone = TimeZone.currentSystemDefault()): LocalDateTime =
-    this.plusDays(-days, timeZone)
+fun LocalDateTime.minusDays(
+    days: Int,
+    timeZone: TimeZone = TimeZone.currentSystemDefault(),
+): LocalDateTime = this.plusDays(-days, timeZone)
 
-fun LocalDateTime.plusHours(hours: Int, timeZone: TimeZone = TimeZone.currentSystemDefault()): LocalDateTime =
-    this.toInstant(timeZone)
+fun LocalDateTime.plusHours(
+    hours: Int,
+    timeZone: TimeZone = TimeZone.currentSystemDefault(),
+): LocalDateTime =
+    this
+        .toInstant(timeZone)
         .plus(hours.hours)
         .toLocalDateTime(timeZone)
 
-fun LocalDateTime.minusHours(hours: Int, timeZone: TimeZone = TimeZone.currentSystemDefault()): LocalDateTime =
-    this.plusHours(-hours, timeZone)
+fun LocalDateTime.minusHours(
+    hours: Int,
+    timeZone: TimeZone = TimeZone.currentSystemDefault(),
+): LocalDateTime = this.plusHours(-hours, timeZone)
 
-fun LocalDateTime.plusMinutes(minutes: Int, timeZone: TimeZone = TimeZone.currentSystemDefault()): LocalDateTime =
-    this.toInstant(timeZone)
+fun LocalDateTime.plusMinutes(
+    minutes: Int,
+    timeZone: TimeZone = TimeZone.currentSystemDefault(),
+): LocalDateTime =
+    this
+        .toInstant(timeZone)
         .plus(minutes.minutes)
         .toLocalDateTime(timeZone)
 
-fun LocalDateTime.minusMinutes(minutes: Int, timeZone: TimeZone = TimeZone.currentSystemDefault()): LocalDateTime =
-    this.plusMinutes(-minutes, timeZone)
+fun LocalDateTime.minusMinutes(
+    minutes: Int,
+    timeZone: TimeZone = TimeZone.currentSystemDefault(),
+): LocalDateTime = this.plusMinutes(-minutes, timeZone)
 
-fun LocalDateTime.plusSeconds(seconds: Int, timeZone: TimeZone = TimeZone.currentSystemDefault()): LocalDateTime =
-    this.toInstant(timeZone)
+fun LocalDateTime.plusSeconds(
+    seconds: Int,
+    timeZone: TimeZone = TimeZone.currentSystemDefault(),
+): LocalDateTime =
+    this
+        .toInstant(timeZone)
         .plus(seconds.seconds)
         .toLocalDateTime(timeZone)
 
-fun LocalDateTime.minusSeconds(seconds: Int, timeZone: TimeZone = TimeZone.currentSystemDefault()): LocalDateTime =
-    this.plusSeconds(-seconds, timeZone)
+fun LocalDateTime.minusSeconds(
+    seconds: Int,
+    timeZone: TimeZone = TimeZone.currentSystemDefault(),
+): LocalDateTime = this.plusSeconds(-seconds, timeZone)
 
 fun LocalDateTime.getLast(
     dayOfWeek: DayOfWeek,
     countingInThisDay: Boolean = false,
-    timeZone: TimeZone = TimeZone.currentSystemDefault()
+    timeZone: TimeZone = TimeZone.currentSystemDefault(),
 ): LocalDateTime {
     if (countingInThisDay && this.dayOfWeek == dayOfWeek) {
         return this
@@ -136,7 +175,7 @@ fun LocalDateTime.getLast(
 fun LocalDateTime.getNext(
     dayOfWeek: DayOfWeek,
     countingInThisDay: Boolean = false,
-    timeZone: TimeZone = TimeZone.currentSystemDefault()
+    timeZone: TimeZone = TimeZone.currentSystemDefault(),
 ): LocalDateTime {
     if (countingInThisDay && this.dayOfWeek == dayOfWeek) {
         return this
@@ -153,15 +192,24 @@ fun LocalDateTime.getNext(
 
 fun LocalDateTime.fromZoneToZone(
     fromZone: TimeZone = TimeZone.currentSystemDefault(),
-    toZone: TimeZone = TimeZone.currentSystemDefault()
+    toZone: TimeZone = TimeZone.currentSystemDefault(),
 ): LocalDateTime =
-    if (fromZone == toZone) this
-    else this.toInstant(fromZone).toLocalDateTime(toZone)
+    if (fromZone == toZone) {
+        this
+    } else {
+        this.toInstant(fromZone).toLocalDateTime(toZone)
+    }
 
 fun LocalDateTime.fromUtcToZone(toZone: TimeZone = TimeZone.currentSystemDefault()): LocalDateTime =
-    if (toZone == TimeZone.UTC) this
-    else this.fromZoneToZone(TimeZone.UTC, toZone)
+    if (toZone == TimeZone.UTC) {
+        this
+    } else {
+        this.fromZoneToZone(TimeZone.UTC, toZone)
+    }
 
 fun LocalDateTime.fromZoneToUtc(fromZone: TimeZone = TimeZone.currentSystemDefault()): LocalDateTime =
-    if (fromZone == TimeZone.UTC) this
-    else this.fromZoneToZone(fromZone, TimeZone.UTC)
+    if (fromZone == TimeZone.UTC) {
+        this
+    } else {
+        this.fromZoneToZone(fromZone, TimeZone.UTC)
+    }
