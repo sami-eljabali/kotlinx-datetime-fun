@@ -57,11 +57,6 @@ val result = dateA.isEqualMonth(dateB)
 val result = dateA.compareDay(dateB)
 val result = dateA.getDayDifference(dateB)
 val result = dateA.isAfterEqualDay(dateB)
-
-// Time
-val result = dateA.compareTime(dateB)
-val result = dateA.getMinuteDifference(dateB)
-val result = dateA.isAfterEqualTime(dateB)
 ```
 
 ### Formatting
@@ -93,13 +88,9 @@ val result = time.isInPm()
 _Add, subtract, and set fields_
 ```kotlin
 // Date arithmetic
-val result = date.plusSeconds(1)
-val result = date.minusMinutes(2)
 val result = date.plusDays(3)
-
-// Time arithmetic
-val result = time.plusHours(3)
-val result = time.minusMinutes(15)
+val result = date.minusMinutes(2)
+val result = date.plusSeconds(1)
 
 // Field setters
 val result = date.withYear(2025)
@@ -160,7 +151,7 @@ repositories {
 }
 
 dependencies {
-  implementation("org.eljabali.sami.kotlinxdatetimefun:kotlinxdatetimefun:0.0.8")
+  implementation("org.eljabali.sami.kotlinxdatetimefun:kotlinxdatetimefun:0.0.9")
 }
 ```
 
