@@ -1,4 +1,4 @@
-name: Kotlin CI
+name: KMP Tests
 
 on:
   push:
@@ -10,8 +10,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  test:
-    name: Run Unit Tests
+  jvm-tests:
+    name: Run JVM Tests
     runs-on: ubuntu-latest
 
     steps:
@@ -27,8 +27,8 @@ jobs:
       - name: Make Gradle executable
         run: chmod +x ./gradlew
 
-      - name: Unit tests
-        run: bash ./gradlew :library:allTests --stacktrace
+      - name: JVM tests
+        run: bash ./gradlew :library:jvmTest --stacktrace
 
   ios-tests:
     name: Run iOS Simulator Tests
