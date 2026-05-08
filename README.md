@@ -7,7 +7,7 @@
 <p align="center">
   <a href="https://github.com/sami-eljabali/kotlinx-datetime-fun/actions?query=branch%3Amain"><img alt="Build Status" src="https://github.com/sami-eljabali/kotlinx-datetime-fun/actions/workflows/main.yml/badge.svg"/></a>
   <a href="https://repo1.maven.org/maven2/org/eljabali/sami/kotlinxdatetimefun/kotlinxdatetimefun/"><img alt="Maven Central" src="https://img.shields.io/maven-central/v/org.eljabali.sami.kotlinxdatetimefun/kotlinxdatetimefun?color=blue"/></a>
-  <a href="https://kotlinlang.org"><img alt="Kotlin" src="https://img.shields.io/badge/Kotlin-2.3.20-orange.svg?style=flat&logo=kotlin"/></a>
+  <a href="https://kotlinlang.org"><img alt="Kotlin" src="https://img.shields.io/badge/Kotlin-2.3.21-orange.svg?style=flat&logo=kotlin"/></a>
 </p> <br>
 
 ```diff
@@ -151,7 +151,7 @@ repositories {
 }
 
 dependencies {
-  implementation("org.eljabali.sami.kotlinxdatetimefun:kotlinxdatetimefun:0.0.9")
+  implementation("org.eljabali.sami.kotlinxdatetimefun:kotlinxdatetimefun:0.1.0")
 }
 ```
 
