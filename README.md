@@ -32,7 +32,6 @@ JVM · Android · iOS · JS (browser & Node.js) · WASM (browser & Node.js)
 
 ## Features
 ### Parsing
-_Convert strings into [Kotlinx DateTime](https://github.com/Kotlin/kotlinx-datetime) objects with ease_
 ```kotlin
 val result = "01:30 AM".toLocaltime()
 val result = "2021-06-07".toLocaldate()
@@ -41,8 +40,7 @@ val result = "06/07/2021".toLocaldate("MM/dd/yyyy", "yyyy-MM-dd") // fall back p
 val result = "2024-11-15T12:34:56.123456Z".toLocalDatetime() // handles fractional seconds that Kotlinx DateTime doesn't
 ```
 
-### Comparisons
-_Compare dates and times at various granularities_
+### Comparison
 ```kotlin
 // Year
 val result = dateA.compareYear(dateB)
@@ -60,14 +58,12 @@ val result = dateA.isAfterEqualDay(dateB)
 ```
 
 ### Formatting
-_Print dates and times using a custom format_
 ```kotlin
 val date = "2021-07-06".toLocaldate()
 val result = date.print("MM/dd/yyyy")
 ```
 
 ### Attributes
-_Query date/time properties_
 ```kotlin
 // LocalDate
 val result = date.isWeekend()
@@ -82,10 +78,15 @@ val result = time.isAtEndOfDay()
 val result = time.isAtNoon()
 val result = time.isInAm()
 val result = time.isInPm()
+
+// Boundaries
+val result = date.atStartOfDay()
+val result = date.atEndOfDay()
+val result = date.atStartOfMonth()
+val result = date.atEndOfMonth()
 ```
 
-### Mutations
-_Add, subtract, and set fields_
+### Mutation
 ```kotlin
 // Date arithmetic
 val result = date.plusDays(3)
@@ -97,19 +98,12 @@ val result = date.withYear(2025)
 val result = date.withMonth(6)
 val result = dateTime.withHour(9)
 
-// Boundaries
-val result = date.atStartOfDay()
-val result = date.atEndOfDay()
-val result = date.atStartOfMonth()
-val result = date.atEndOfMonth()
-
 // Navigation
 val result = date.getLast(DayOfWeek.FRIDAY)
 val result = date.getNext(DayOfWeek.MONDAY)
 ```
 
-### Time Zone Conversion
-_Convert between time zones_
+### Time Zone Conversions
 ```kotlin
 val result = dateTime.fromZoneToZone(ZoneIds.AMERICA_NEW_YORK, ZoneIds.ASIA_TOKYO)
 val result = dateTime.fromUtcToZone(ZoneIds.EUROPE_LONDON)
@@ -117,7 +111,6 @@ val result = dateTime.fromZoneToUtc(ZoneIds.AMERICA_LOS_ANGELES)
 ```
 
 ### Preset Dates
-_Quickly access commonly used dates_
 ```kotlin
 // Now
 val result = LocalTime.now()
