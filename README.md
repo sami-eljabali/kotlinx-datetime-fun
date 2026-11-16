@@ -103,7 +103,7 @@ val result = date.getLast(DayOfWeek.FRIDAY)
 val result = date.getNext(DayOfWeek.MONDAY)
 ```
 
-### Time Zone Conversions
+### Time Zone Conversion
 ```kotlin
 val result = dateTime.fromZoneToZone(ZoneIds.AMERICA_NEW_YORK, ZoneIds.ASIA_TOKYO)
 val result = dateTime.fromUtcToZone(ZoneIds.EUROPE_LONDON)
